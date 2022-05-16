@@ -3,7 +3,7 @@
 /*=============================================
 Traer todas las categorias
 =============================================*/
-$select = "*";
+$select = "image_category,route_category,name_category";
 $url = CurlController::api()."categories?linkTo=status_category&equalTo=1&linkTo_=bdelete_category&equalTo_=0&orderBy=id_category&orderMode=ASC&select=".$select;
 $method = "GET";
 $fields = array();

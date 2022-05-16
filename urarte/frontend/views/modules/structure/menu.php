@@ -5,7 +5,7 @@
 				<div class="dropdown-trigger d-none d-sm-block">
 					<div class="dropdown-trigger__item"></div>
 				</div>
-				<div class="header-logo"><a class="header-logo__link" href="<?php $path ?>"><img class="header-logo__img" src="<?php echo $backoffice ?>views/img/template/<?php echo $organization[0]->logo_organization ?>" alt="<?php echo $organization[0]->name_organization ?>"/></a></div>
+				<div class="header-logo"><a class="header-logo__link" href="<?php $path ?>"><img class="header-logo__img" src="<?php echo $backoffice ?>views/img/template/<?php echo $organization[0]->logodark_organization ?>" alt="<?php echo $organization[0]->name_organization ?>"/></a></div>
 			</div>
 			<div class="col-auto">
 				<!-- main menu start-->
