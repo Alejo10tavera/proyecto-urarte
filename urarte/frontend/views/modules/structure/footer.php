@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4">
-				<div class="footer-logo"><a class="footer-logo__link" href="<?php $path ?>"><img class="footer-logo__img" src="<?php echo $backoffice ?>views/img/template/<?php echo $organization[0]->logowhite_organization ?>" alt="<?php echo $organization[0]->name_organization ?>"/></a></div>
+				<div class="footer-logo"><a class="footer-logo__link" href="/"><img class="footer-logo__img" src="<?php echo $backoffice ?>views/img/template/<?php echo $organization[0]->logowhite_organization ?>" alt="<?php echo $organization[0]->name_organization ?>"/></a></div>
 				<div class="footer-contacts">
 					<p class="footer-contacts__address"><?php echo $organization[0]->address_organization ?></p>
 					<p class="footer-contacts__phone">Télefono: <a href="tel:+57 <?php echo $organization[0]->phone_organization ?>"><?php echo $organization[0]->phone_organization ?></a></p>
@@ -32,22 +32,22 @@
 				<!-- footer nav start-->
 				<nav>
 					<ul class="footer-menu">
-						<li class="footer-menu__item footer-menu__item--active"><a class="footer-menu__link" href="#">Home Page</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">Blog & News</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">Donations</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">Clean Water</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">About Us</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">Contact Us</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">Animals</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">Madicine</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">Pages</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">Elements</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">Children</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">Food</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">Causes</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">Documentation</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">Old People</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="#">Documentation</a></li>
+						<li class="footer-menu__item footer-menu__item--active"><a class="footer-menu__link" href="/">Inicio</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="about">Acerca de</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="sponsors">Patrocinadores</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="donors">Donadores</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="teams">Equipo</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="projects">Proyectos</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="events">Eventos</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="login">Mi cuenta</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="blogs">Blog</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="gallery">Galeria</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="faq">FAQ</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="documents">Documentos</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="informations">Información</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="contact">Contacto</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="donate">Donar</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="urarte">Urarte</a></li>
 					</ul>
 				</nav>
 				<!-- footer nav end-->
@@ -62,7 +62,7 @@
 				</div>
 				<div class="col-md-6 col-xl-5">
 					<div class="footer__form">
-						<input class="footer__form-input" type="email" placeholder="Enter your E-mail"/>
+						<input class="footer__form-input" type="email" placeholder="Ingrese su E-mail"/>
 						<button class="footer__form-submit button button--primary" type="submit">Subscribe</button>
 					</div>
 				</div>
