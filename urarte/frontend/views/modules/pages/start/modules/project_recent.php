@@ -69,7 +69,7 @@ $projectsRecentSocial = json_decode($projectsRecent[0]->social_project,true);
 
 																		if($value_['status'] != 0){
 
-																			echo '<li class="aside-socials__item"><a class="aside-socials__link" href="'.$value_["url"].'"><i class="fa '.$value_["red"].'" aria-hidden="true"></i></a></li>';
+																			echo '<li class="aside-socials__item"><a class="aside-socials__link" href="'.$value_["url"].'" target="_blank"><i class="fa '.$value_["red"].'" aria-hidden="true"></i></a></li>';
 
 																		}
 																		

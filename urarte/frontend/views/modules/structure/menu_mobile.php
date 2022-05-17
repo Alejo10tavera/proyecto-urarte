@@ -15,6 +15,7 @@
 					<li><a href="about"><span>Acerca de</span></a></li>
 					<li><a href="sponsors"> <span>Patrocinadores</span></a></li>
 					<li><a href="donors"><span>Donadores</span></a></li>
+					<li><a href="categories"><span>Categorias</span></a></li>
 					<li><a href="volunteer"><span>Voluntarios</span></a></li>
 					<li><a href="events"><span>Eventos</span></a></li>
 					<li><a href="blogs"><span>Blog</span></a></li>						
@@ -58,7 +59,7 @@
 
 					if($value['status'] != 0){
 
-						echo '<li class="aside-socials__item"><a class="aside-socials__link" href="'.$value["url"].'"><i class="fa '.$value["red"].'" aria-hidden="true"></i></a></li>';
+						echo '<li class="aside-socials__item"><a class="aside-socials__link" href="'.$value["url"].'" target="_blank"><i class="fa '.$value["red"].'" aria-hidden="true"></i></a></li>';
 
 					}
 
@@ -70,7 +71,7 @@
 
 	</div>
 
-	<div class="aside-dropdown__item"><a class="button button--squared" href="#"><span>Donar</span></a></div>
+	<div class="aside-dropdown__item"><a class="button button--squared" href="donate"><span>Donar</span></a></div>
 
 	</div>
 

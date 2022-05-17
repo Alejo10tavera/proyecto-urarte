@@ -39,7 +39,7 @@
 						<li class="footer-menu__item"><a class="footer-menu__link" href="teams">Equipo</a></li>
 						<li class="footer-menu__item"><a class="footer-menu__link" href="projects">Proyectos</a></li>
 						<li class="footer-menu__item"><a class="footer-menu__link" href="events">Eventos</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="login">Mi cuenta</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="categories">Categorías</a></li>
 						<li class="footer-menu__item"><a class="footer-menu__link" href="blogs">Blog</a></li>
 						<li class="footer-menu__item"><a class="footer-menu__link" href="gallery">Galeria</a></li>
 						<li class="footer-menu__item"><a class="footer-menu__link" href="faq">FAQ</a></li>

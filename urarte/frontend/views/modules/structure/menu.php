@@ -21,6 +21,7 @@
 								<li><a href="about"><span>Acerca de</span></a></li>
 								<li><a href="sponsors"> <span>Patrocinadores</span></a></li>
 								<li><a href="donors"><span>Donadores</span></a></li>
+								<li><a href="categories"><span>Categorias</span></a></li>
 								<li><a href="teams"><span>Equipo</span></a></li>
 								<li><a href="events"><span>Eventos</span></a></li>
 								<li><a href="blogs"><span>Blog</span></a></li>						
@@ -48,7 +49,7 @@
 					<li class="main-menu__item"><a class="main-menu__link" href="login"><span>Mi cuenta</span></a></li>
 				</ul>
 				
-				<a class="button button--squared" href="donation"><span>Donar</span></a>
+				<a class="button button--squared" href="donate"><span>Donar</span></a>
 
 				<div class="dropdown-trigger d-block d-sm-none">
 					<div class="dropdown-trigger__item"></div>
