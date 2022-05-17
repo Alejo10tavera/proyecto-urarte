@@ -26,6 +26,108 @@ $organization = CurlController::request($url, $method, $fields, $header)->result
 $keywords = json_decode($organization[0]->keywords_organization,true);
 $dataSocial = json_decode($organization[0]->social_organization,true);
 
+/*=============================================
+Capturar las rutas de la URL
+=============================================*/
+
+$routesArray = explode("/", $_SERVER['REQUEST_URI']);
+
+if(!empty(array_filter($routesArray)[1])){
+
+    $urlParams = explode("&", array_filter($routesArray)[1]);   
+    
+}
+
+if(!empty($urlParams[0])){
+
+	/*=============================================
+    Filtrar categorías con el parámetro URL
+    =============================================*/
+
+    $url = CurlController::api()."categories?linkTo=route_category&equalTo=".$urlParams[0]."&linkTo_=status_category&equalTo_=1&select=route_category";
+    $method = "GET";
+    $fields = array();
+    $header = array();
+
+    $urlCategories = CurlController::request($url, $method, $fields, $header);
+    
+    if($urlCategories->status == 404){
+
+    	/*=============================================
+	    Filtrar proyectos con el parámetro URL
+	    =============================================*/
+
+	    $url = CurlController::api()."projects?linkTo=route_project&equalTo=".$urlParams[0]."&linkTo_=status_project&equalTo_=1&select=route_project";
+	    $method = "GET";
+	    $fields = array();
+	    $header = array();
+
+	    $urlProjects = CurlController::request($url, $method, $fields, $header);
+	    
+	    if($urlProjects->status == 404){
+
+	    	/*=============================================
+		    Filtrar productos con el parámetro URL
+		    =============================================*/
+
+		    $url = CurlController::api()."products?linkTo=route_product&equalTo=".$urlParams[0]."&linkTo_=status_product&equalTo_=1&select=route_product";
+		    $method = "GET";
+		    $fields = array();
+		    $header = array();
+
+		    $urlProducts = CurlController::request($url, $method, $fields, $header);
+		   
+		   	if($urlProducts->status == 404){
+
+		   		/*=============================================
+			    Filtrar blog con el parámetro URL
+			    =============================================*/
+
+			    $url = CurlController::api()."blogs?linkTo=route_blog&equalTo=".$urlParams[0]."&linkTo_=status_blog&equalTo_=1&select=route_blog";
+			    $method = "GET";
+			    $fields = array();
+			    $header = array();
+
+			    $urlBlogs = CurlController::request($url, $method, $fields, $header);
+			    
+			    if($urlBlogs->status == 404){
+
+			    	/*=============================================
+				    Filtrar equipo con el parámetro URL
+				    =============================================*/
+
+				    $url = CurlController::api()."teams?linkTo=route_team&equalTo=".$urlParams[0]."&linkTo_=status_team&equalTo_=1&select=route_team";
+				    $method = "GET";
+				    $fields = array();
+				    $header = array();
+
+				    $urlTeams = CurlController::request($url, $method, $fields, $header);
+
+				    if($urlTeams->status == 404){
+
+				    	/*=============================================
+					    Filtrar paginas con el parámetro URL
+					    =============================================*/
+
+					    $url = CurlController::api()."pages?linkTo=route_page&equalTo=".$urlParams[0]."&linkTo_=status_page&equalTo_=1&select=route_page";
+					    $method = "GET";
+					    $fields = array();
+					    $header = array();
+
+					    $urlPages = CurlController::request($url, $method, $fields, $header);
+
+				    }
+
+			    }
+
+		   	}
+
+	    }
+
+    }
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -114,38 +216,49 @@ $dataSocial = json_decode($organization[0]->social_organization,true);
 
 				<?php 
 
-					/*Slider*/
-					include "modules/pages/index/sliders.php";
+					if(!empty($urlParams[0])){
 
-					/*Seccion 1 - Acerca de*/
-					include "modules/pages/index/section_one.php";
+						if($urlCategories->status == 200){
 
-					/*Categorias*/
-					include "modules/pages/index/categories.php";
+							/*Mostrar todos los proyectos de una categoria*/
+							include "modules/pages/projects/projects.php";
 
-					/*Proyectos recien agregados*/
-					include "modules/pages/index/project_recent.php";
+						}else if($urlProjects->status == 200){
 
-					/*Proyectos mas vistos*/
-					include "modules/pages/index/project_views.php";
+							/*Mostrar informacion del proyecto*/
+							include "modules/pages/projects/project.php";
 
-					/*Seccion 2 - Proyecto de vida*/
-					include "modules/pages/index/section_two.php";
+						}else if($urlProducts->status == 200){
 
-					/*Proyectos mas viejos*/
-					include "modules/pages/index/project_old.php";
+							/*Mostrar informacion del producto de una tienda*/
+							include "modules/pages/products/product.php";
 
-					/*Seccion 3 - Voluntario y donador*/
-					include "modules/pages/index/section_three.php";
+						}else if($urlBlogs->status == 200){
 
-					/*Testimonios*/
-					include "modules/pages/index/testimonials.php";
+							/*Mostrar informacion del blog*/
+							include "modules/pages/blogs/blog.php";
 
-					/*blog*/
-					include "modules/pages/index/blog.php";
+						}else if($urlTeams->status == 200){
 
-					/*Fundadores*/
-					include "modules/pages/index/parents.php";
+							/*Mostrar informacion del miembro del equipo*/
+							include "modules/pages/teams/team.php";
+
+						}else if($urlPages->status == 200){
+
+							include "modules/pages/".$urlPages->results[0]->route_page."/".$urlPages->results[0]->route_page.".php";
+
+						}else{
+
+							/*Mostrar informacion cuando no encuentra pagina*/
+							include "modules/pages/404/404.php";
+
+						}
+
+					}else{
+
+						include "modules/pages/start/start.php";
+
+					}
 
 					/*Imagen al pie de pagina*/
 					include "modules/structure/img_footer.php";
@@ -154,9 +267,9 @@ $dataSocial = json_decode($organization[0]->social_organization,true);
 
 			</main>
 
-			<!-- footer front_3 start-->
+			<!-- footer -->
 			<?php include "modules/structure/footer.php"; ?>
-			<!-- footer front_3 end-->
+			
 		</div>
 		<!-- libs-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
