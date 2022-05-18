@@ -21,10 +21,7 @@
 								<li><a href="about"><span>Acerca de</span></a></li>
 								<li><a href="sponsors"> <span>Patrocinadores</span></a></li>
 								<li><a href="donors"><span>Donadores</span></a></li>
-<<<<<<< HEAD
 								<li><a href="categories"><span>Categorias</span></a></li>
-=======
->>>>>>> 1f7e113619270afb96acb55c101dda1d1bca7326
 								<li><a href="teams"><span>Equipo</span></a></li>
 								<li><a href="events"><span>Eventos</span></a></li>
 								<li><a href="blogs"><span>Blog</span></a></li>						
@@ -36,6 +33,8 @@
 						</li>
 
 						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="projects"><span>Proyectos</span></a></li>
+
+						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="events"><span>Eventos</span></a></li>
 
 						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="blogs"><span>Blog</span></a></li>
 						

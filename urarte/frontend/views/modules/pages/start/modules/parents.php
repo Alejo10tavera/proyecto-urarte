@@ -3,7 +3,7 @@
 /*=============================================
 Traer todas los fundadores
 =============================================*/
-$select = "*";
+$select = "image_sponsor,name_sponsor";
 $url = CurlController::api()."sponsors?linkTo=status_sponsor&equalTo=1&linkTo_=bdelete_sponsor&equalTo_=0&orderBy=id_sponsor&orderMode=ASC&startAt=0&endAt=6&select=".$select;
 $method = "GET";
 $fields = array();

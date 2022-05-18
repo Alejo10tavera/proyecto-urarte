@@ -12,6 +12,9 @@ include "modules/categories.php";
 /*Proyectos recien agregados*/
 include "modules/project_recent.php";
 
+/*Eventos*/
+include "modules/events.php";
+
 /*Proyectos mas vistos*/
 include "modules/project_views.php";
 

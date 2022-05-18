@@ -32,7 +32,7 @@ $blogs = CurlController::request($url, $method, $fields, $header)->results;
 
 						echo '<div class="col-md-6 col-xl-4">
 								<div class="blog-item blog-item--style-1">
-									<div class="blog-item__img"><img class="img--bg" src="'.$backoffice.'views/img/projects/'.$value->id_category.'/logo/'.$value->image_blog.'" alt="'.$value->name_blog.'"/><span class="blog-item__badge" style="background-color: '.$value->color_category.';">'.$value->name_category.'</span></div>
+									<div class="blog-item__img"><img class="img--bg" src="'.$backoffice.'views/img/blogs/'.$value->id_category.'/logo/'.$value->image_blog.'" alt="'.$value->name_blog.'"/><span class="blog-item__badge" style="background-color: '.$value->color_category.';">'.$value->name_category.'</span></div>
 									<div class="blog-item__content">
 										<h6 class="blog-item__title"><a href="'.$value->route_blog.'">'.$value->title_blog.'</a></h6>
 										<p>'.$value->headline_blog.'</p>
