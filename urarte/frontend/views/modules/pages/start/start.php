@@ -32,6 +32,3 @@ include "modules/testimonials.php";
 
 /*blog*/
 include "modules/blog.php";
-
-/*Fundadores*/
-include "modules/parents.php";

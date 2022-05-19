@@ -9,7 +9,7 @@
 
 			<li class="aside-menu__item aside-menu__item--has-child"><a class="aside-menu__link" href="<?php echo $path ?>"><span>Inicio</span></a></li>
 			
-			<li class="aside-menu__item aside-menu__item--has-child main-menu__item--active"><a class="aside-menu__link" href="javascript:void(0);"><span>Páginas</span></a>
+			<li class="aside-menu__item aside-menu__item--has-child main-menu__item--active"><a class="aside-menu__link"><span>Páginas</span></a>
 				<!-- sub menu start-->
 				<ul class="aside-menu__sub-list">
 					<li><a href="about"><span>Acerca de</span></a></li>

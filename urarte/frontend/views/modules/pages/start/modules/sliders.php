@@ -4,7 +4,7 @@
 Traer los sliders
 =============================================*/
 $select = "*";
-$url = CurlController::api()."sliders?linkTo=status_slider&equalTo=1&linkTo_=bdelete_slider&equalTo_=0&orderBy=order_slider&orderMode=ASC&select=".$select;
+$url = CurlController::api()."sliders?linkTo=status_slider&equalTo=1&linkTo_=bdelete_slider&equalTo_=0&orderBy=order_slider&orderMode=ASC&startAt=0&endAt=6&select=".$select;
 $method = "GET";
 $fields = array();
 $header = array();

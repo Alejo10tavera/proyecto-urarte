@@ -15,7 +15,7 @@
 						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link main-menu__item--active" href="/"><span>Inicio</span></a></li>
 
 						
-						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="javascript:void(0);"><span>Páginas</span></a>
+						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link"><span>Páginas</span></a>
 							<!-- sub menu start-->
 							<ul class="main-menu__sub-list sub-list--style-2">
 								<li><a href="about"><span>Acerca de</span></a></li>

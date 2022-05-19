@@ -281,6 +281,9 @@ if(!empty($urlParams[0])){
 					}
 
 					/*Imagen al pie de pagina*/
+					include "modules/structure/parents.php";
+
+					
 					include "modules/structure/img_footer.php";
 
 				?>
