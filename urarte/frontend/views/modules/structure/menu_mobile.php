@@ -12,27 +12,26 @@
 			<li class="aside-menu__item aside-menu__item--has-child main-menu__item--active"><a class="aside-menu__link"><span>Páginas</span></a>
 				<!-- sub menu start-->
 				<ul class="aside-menu__sub-list">
-					<li><a href="about"><span>Acerca de</span></a></li>
-					<li><a href="sponsors"> <span>Patrocinadores</span></a></li>
-					<li><a href="donors"><span>Donadores</span></a></li>
-					<li><a href="categories"><span>Categorias</span></a></li>
-					<li><a href="volunteer"><span>Voluntarios</span></a></li>
-					<li><a href="events"><span>Eventos</span></a></li>
-					<li><a href="blogs"><span>Blog</span></a></li>						
-					<li><a href="gallery"><span>Galeria</span></a></li>
-					<li><a href="faq"><span>FAQ</span></a></li>
-					<li><a href="urarte"><span>Urarte</span></a></li>
+					<li><a href="<?php echo $path ?>about"><span>Acerca de</span></a></li>
+					<li><a href="<?php echo $path ?>donors"><span>Donadores</span></a></li>
+					<li><a href="<?php echo $path ?>categories"><span>Categorias</span></a></li>
+					<li><a href="<?php echo $path ?>volunteer"><span>Voluntarios</span></a></li>
+					<li><a href="<?php echo $path ?>events"><span>Eventos</span></a></li>
+					<li><a href="<?php echo $path ?>blogs"><span>Blog</span></a></li>						
+					<li><a href="<?php echo $path ?>gallery"><span>Galeria</span></a></li>
+					<li><a href="<?php echo $path ?>faq"><span>FAQ</span></a></li>
+					<li><a href="<?php echo $path ?>urarte"><span>Urarte</span></a></li>
 				</ul>
 				<!-- sub menu end-->
 			</li>
 
-			<li class="aside-menu__item aside-menu__item--has-child"><a class="aside-menu__link" href="projects"><span>Proyectos</span></a></li>
+			<li class="aside-menu__item aside-menu__item--has-child"><a class="aside-menu__link" href="<?php echo $path ?>projects"><span>Proyectos</span></a></li>
 
-			<li class="aside-menu__item aside-menu__item--has-child"><a class="aside-menu__link" href="events"><span>Eventos</span></a></li>
+			<li class="aside-menu__item aside-menu__item--has-child"><a class="aside-menu__link" href="<?php echo $path ?>events"><span>Eventos</span></a></li>
 
-			<li class="aside-menu__item aside-menu__item--has-child"><a class="aside-menu__link" href="blog"><span>Blog</span></a></li>
+			<li class="aside-menu__item aside-menu__item--has-child"><a class="aside-menu__link" href="<?php echo $path ?>blog"><span>Blog</span></a></li>
 
-			<li class="aside-menu__item"><a class="aside-menu__link" href="contact"><span>Contacto</span></a></li>
+			<li class="aside-menu__item"><a class="aside-menu__link" href="<?php echo $path ?>contact"><span>Contacto</span></a></li>
 
 		</ul>
 
@@ -42,10 +41,10 @@
 
 		<!-- aside menu start-->
 		<ul class="aside-menu">
-			<li class="aside-menu__item"><a class="aside-menu__link" href="documents">Documentos</a></li>
-			<li class="aside-menu__item"><a class="aside-menu__link" href="informations">Información</a></li>
-			<li class="aside-menu__item"><a class="aside-menu__link" href="urarte">Historia</a></li>
-			<li class="aside-menu__item"><a class="aside-menu__link" href="contact">Contacto</a></li>
+			<li class="aside-menu__item"><a class="aside-menu__link" href="<?php echo $path ?>documents">Documentos</a></li>
+			<li class="aside-menu__item"><a class="aside-menu__link" href="<?php echo $path ?>informations">Información</a></li>
+			<li class="aside-menu__item"><a class="aside-menu__link" href="<?php echo $path ?>urarte">Historia</a></li>
+			<li class="aside-menu__item"><a class="aside-menu__link" href="<?php echo $path ?>contact">Contacto</a></li>
 		</ul>
 
 		<!-- aside menu end-->

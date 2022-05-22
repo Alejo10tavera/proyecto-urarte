@@ -18,27 +18,26 @@
 						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link"><span>Páginas</span></a>
 							<!-- sub menu start-->
 							<ul class="main-menu__sub-list sub-list--style-2">
-								<li><a href="about"><span>Acerca de</span></a></li>
-								<li><a href="sponsors"> <span>Patrocinadores</span></a></li>
-								<li><a href="donors"><span>Donadores</span></a></li>
-								<li><a href="categories"><span>Categorias</span></a></li>
-								<li><a href="teams"><span>Equipo</span></a></li>
-								<li><a href="events"><span>Eventos</span></a></li>
-								<li><a href="blogs"><span>Blog</span></a></li>						
-								<li><a href="gallery"><span>Galeria</span></a></li>
-								<li><a href="faq"><span>FAQ</span></a></li>
-								<li><a href="urarte"><span>Urarte</span></a></li>
+								<li><a href="<?php echo $path ?>about"><span>Acerca de</span></a></li>
+								<li><a href="<?php echo $path ?>donors"><span>Donadores</span></a></li>
+								<li><a href="<?php echo $path ?>categories"><span>Categorias</span></a></li>
+								<li><a href="<?php echo $path ?>teams"><span>Equipo</span></a></li>
+								<li><a href="<?php echo $path ?>events"><span>Eventos</span></a></li>
+								<li><a href="<?php echo $path ?>blogs"><span>Blog</span></a></li>						
+								<li><a href="<?php echo $path ?>gallery"><span>Galeria</span></a></li>
+								<li><a href="<?php echo $path ?>faq"><span>FAQ</span></a></li>
+								<li><a href="<?php echo $path ?>urarte"><span>Urarte</span></a></li>
 							</ul>
 							<!-- sub menu end-->
 						</li>
 
-						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="projects"><span>Proyectos</span></a></li>
+						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="<?php echo $path ?>projects"><span>Proyectos</span></a></li>
 
-						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="events"><span>Eventos</span></a></li>
+						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="<?php echo $path ?>events"><span>Eventos</span></a></li>
 
-						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="blogs"><span>Blog</span></a></li>
+						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="<?php echo $path ?>blogs"><span>Blog</span></a></li>
 						
-						<li class="main-menu__item"><a class="main-menu__link" href="contact"><span>Contacto</span></a></li>
+						<li class="main-menu__item"><a class="main-menu__link" href="<?php echo $path ?>contact"><span>Contacto</span></a></li>
 						
 					</ul>
 				</nav>
@@ -48,10 +47,10 @@
 			<div class="col-auto d-flex align-items-center">
 				<!-- lang select start-->
 				<ul class="lang-select">
-					<li class="main-menu__item"><a class="main-menu__link" href="login"><span>Mi cuenta</span></a></li>
+					<li class="main-menu__item"><a class="main-menu__link" href="<?php echo $path ?>login"><span>Mi cuenta</span></a></li>
 				</ul>
 				
-				<a class="button button--squared" href="donate"><span>Donar</span></a>
+				<a class="button button--squared" href="<?php echo $path ?>donate"><span>Donar</span></a>
 
 				<div class="dropdown-trigger d-block d-sm-none">
 					<div class="dropdown-trigger__item"></div>

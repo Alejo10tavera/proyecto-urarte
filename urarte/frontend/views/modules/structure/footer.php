@@ -33,21 +33,20 @@
 				<nav>
 					<ul class="footer-menu">
 						<li class="footer-menu__item footer-menu__item--active"><a class="footer-menu__link" href="/">Inicio</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="about">Acerca de</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="sponsors">Patrocinadores</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="donors">Donadores</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="teams">Equipo</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="projects">Proyectos</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="events">Eventos</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="categories">Categorías</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="blogs">Blog</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="gallery">Galeria</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="faq">FAQ</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="documents">Documentos</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="informations">Información</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="contact">Contacto</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="donate">Donar</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="urarte">Urarte</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>about">Acerca de</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>donors">Donadores</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>teams">Equipo</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>projects">Proyectos</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>events">Eventos</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>categories">Categorías</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>blogs">Blog</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>gallery">Galeria</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>faq">FAQ</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>documents">Documentos</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>informations">Información</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>contact">Contacto</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>donate">Donar</a></li>
+						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>urarte">Urarte</a></li>
 					</ul>
 				</nav>
 				<!-- footer nav end-->

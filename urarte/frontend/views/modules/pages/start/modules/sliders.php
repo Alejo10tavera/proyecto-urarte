@@ -15,8 +15,8 @@ $sliders = CurlController::request($url, $method, $fields, $header)->results;
 Sección video
 =============================================*/
 
-$video = CurlController::dataTemplates("index_section_slider");
-$data = json_decode($video[0]->text_template,true);
+$videoSlider = CurlController::dataTemplates("index_section_slider");
+$dataVideoSlider = json_decode($videoSlider[0]->text_template,true);
 
 ?>
 <section class="promo promo--front_3">
@@ -117,23 +117,27 @@ $data = json_decode($video[0]->text_template,true);
 		
 	</div>
 
-	<!-- promo pannel start-->
-	<div class="promo-pannel">
+	<?php if ($dataVideoSlider[0]["status"] != 0): ?>
 
-		<div class="promo-pannel__video">
+		<!-- promo pannel start-->
+		<div class="promo-pannel">
 
-			<img class="img--bg" src="<?php echo $backoffice ?>views/img/template/<?php echo $data[0]["imagen"] ?>" alt="image"/>
+			<div class="promo-pannel__video">
 
-			<a class="video-trigger" href="https://www.youtube.com/watch?v=<?php echo $data[0]["route"] ?>">
+				<img class="img--bg" src="<?php echo $backoffice ?>views/img/template/<?php echo $dataVideoSlider[0]["imagen"] ?>" alt="image"/>
 
-				<span>Ver video</span>
-				<i class="fa fa-play" aria-hidden="true"></i>
+				<a class="video-trigger" href="https://www.youtube.com/watch?v=<?php echo $dataVideoSlider[0]["route"] ?>">
 
-			</a>
+					<span>Ver video</span>
+					<i class="fa fa-play" aria-hidden="true"></i>
+
+				</a>
+
+			</div>
 
 		</div>
-
-	</div>
+		
+	<?php endif ?>
 
 	<!-- slider nav start-->
 	<div class="slider__nav slider__nav--promo">

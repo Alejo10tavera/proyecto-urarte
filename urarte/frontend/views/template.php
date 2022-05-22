@@ -176,7 +176,7 @@ if(!empty($urlParams[0])){
 		<title><?php echo $organization[0]->name_organization ?></title>
 
 		<!-- styles-->
-		<link rel="stylesheet" href="views/css/styles.min.css"/>
+		<link rel="stylesheet" href="<?php echo $path ?>views/css/styles.min.css"/>
 
 		<!-- web-font loader-->
 		<script>
@@ -282,7 +282,6 @@ if(!empty($urlParams[0])){
 
 					/*Imagen al pie de pagina*/
 					include "modules/structure/parents.php";
-
 					
 					include "modules/structure/img_footer.php";
 
@@ -296,9 +295,12 @@ if(!empty($urlParams[0])){
 		</div>
 		<!-- libs-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="views/js/libs.min.js"></script>
+		<script src="<?php echo $path ?>views/js/libs.min.js"></script>
 		<!-- scripts-->
-		<script src="views/js/common.min.js"></script>
+		<script src="<?php echo $path ?>views/js/common.min.js"></script>
+		<script src="<?php echo $path ?>views/js/template.js"></script>
+		
 		<?php include "complement/svg.php" ?>
+
 	</body>
 </html>

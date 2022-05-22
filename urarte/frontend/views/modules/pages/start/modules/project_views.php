@@ -11,7 +11,6 @@ $header = array();
 
 $projectsViews = CurlController::request($url, $method, $fields, $header)->results;
 
-
 ?>
 
 <section class="section">
