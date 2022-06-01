@@ -57,17 +57,14 @@ $pageCategories = CurlController::request($url, $method, $fields, $header)->resu
             }     
 
         }else{
-
             
-            $startAt = 0;            
-            
-            $endAt = 6;
-            
+            $startAt = 0;           
+            $endAt = 6;            
 
         }
 
 
-        $select = "*";
+        $select = "name_category,route_category,image_category,description_category,color_category";
         $url = CurlController::api()."categories?linkTo=type_category&equalTo=1&linkTo_=status_category&equalTo_=1&orderBy=id_category&orderMode=ASC&startAt=".$startAt."&endAt=".$endAt."&select=".$select;
         
         $method = "GET";
@@ -75,7 +72,6 @@ $pageCategories = CurlController::request($url, $method, $fields, $header)->resu
         $header = array();
 
         $dataCategory = CurlController::request($url, $method, $fields, $header)->results; 
-        
         
     ?>
 
@@ -97,7 +93,7 @@ $pageCategories = CurlController::request($url, $method, $fields, $header)->resu
                                             </div>
                                             <div class="col-lg-7 col-xl-8">
                                                 <div class="causes-item__action">
-                                                    <div class="causes-item__badge" style="background-color: '.$value->color_category.'">'.$value->id_category.'</div><a class="causes-item__link" href="'.$value->route_category.'">Proyectos</a>
+                                                    <div class="causes-item__badge" style="background-color: '.$value->color_category.'">-</div><a class="causes-item__link" href="'.$path.$value->route_category.'">Proyectos</a>
                                                 </div>
                                                 <div class="causes-item__top">
                                                     <h6 class="causes-item__title"> <a href="'.$value->route_category.'">'.$value->name_category.'</a></h6>
@@ -114,6 +110,9 @@ $pageCategories = CurlController::request($url, $method, $fields, $header)->resu
                 ?>
             </div>
         </div>
+
+        <!-- Paginación -->
+
         <div class="container">
             <div class="row">
                 <div class="col-12">

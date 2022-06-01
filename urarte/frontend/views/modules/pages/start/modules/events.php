@@ -44,7 +44,7 @@ $venueEvent = json_decode($events[0]->venue_event,true);
 							<div class="event-item">
 								<div class="event-item__img"><img class="img--bg" src="'.$backoffice.'views/img/events/post/'.$value->image_event.'" alt="'.$value->name_event.'"/></div>
 								<div class="event-item__content">
-									<h6 class="event-item__title"><a href="'.$value->route_event.'">'.$value->name_event.'</a></h6>
+									<h6 class="event-item__title"><a href="'.$path.$value->route_event.'">'.$value->name_event.'</a></h6>
 
 									<p><b>'.$venueEvent[1]["city"].',</b> '.$venueEvent[0]["address"].'</p>
 
@@ -62,7 +62,7 @@ $venueEvent = json_decode($events[0]->venue_event,true);
 			
 		</div>
 		<div class="row">
-			<div class="col-12 text-center"><a class="button button--primary" href="events">Ver más</a></div>
+			<div class="col-12 text-center"><a class="button button--primary" href="<?php echo $path ?>events">Ver más</a></div>
 		</div>
 	</div>
 </section>

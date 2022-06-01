@@ -33,9 +33,9 @@ $categories = CurlController::request($url, $method, $fields, $header)->results;
 					
 					echo '<div class="col-6 col-md-4 col-lg-3">
 							<div class="icon-item">
-								<div class="icon-item__img"><img src="'.$backoffice.'views/img/categories/'.$value->image_category.'" alt="icon"/></div>
+								<div class="icon-item__img"><img src="'.$backoffice.'views/img/categories/'.$value->image_category.'" alt="'.$value->name_category.'"/></div>
 								<div class="icon-item__text">
-									<h6 class="causes-item__title"> <a href="'.$value->route_category.'">'.$value->name_category.'</a></h6>
+									<h6 class="causes-item__title"> <a href="'.$path.$value->route_category.'">'.$value->name_category.'</a></h6>
 								</div>
 							</div>
 						</div>';

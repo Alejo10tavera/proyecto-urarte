@@ -17,7 +17,7 @@
 
 							if($value['status'] != 0){
 
-								echo '<li class="footer-socials__item"><a class="footer-socials__link" href="'.$value["url"].'"><i class="fa '.$value["red"].'" aria-hidden="true"></i></a></li>';
+								echo '<li class="footer-socials__item"><a class="footer-socials__link" target="_blank" href="'.$value["url"].'"><i class="fa '.$value["red"].'" aria-hidden="true"></i></a></li>';
 
 							}
 

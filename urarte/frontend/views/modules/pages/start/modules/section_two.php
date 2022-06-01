@@ -25,7 +25,7 @@ $dataSectionFour = json_decode($sectionIndexFour[0]->text_template,true);
 
 				<?php if ($dataSectionFour[0]["route"] != ""): ?>
 
-					<a class="button button--primary" href="<?php echo $dataSectionFour[0]["route"] ?>"><?php echo $dataSectionFour[0]["text"] ?></a>
+					<a class="button button--primary" href="<?php echo $path.$dataSectionFour[0]["route"] ?>"><?php echo $dataSectionFour[0]["text"] ?></a>
 					
 				<?php endif ?>
 

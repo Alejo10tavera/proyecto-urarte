@@ -28,7 +28,7 @@ $dataSectionTwo = json_decode($sectionIndexTwo[0]->text_template,true);
 
 				<?php if ($dataSectionOne[0]["route"] != ""): ?>
 
-					<a class="button button--primary" href="<?php echo $dataSectionOne[0]["route"] ?>"><?php echo $dataSectionOne[0]["text"] ?></a>
+					<a class="button button--primary" href="<?php echo $path.$dataSectionOne[0]["route"] ?>"><?php echo $dataSectionOne[0]["text"] ?></a>
 					
 				<?php endif ?>
 				
@@ -41,7 +41,7 @@ $dataSectionTwo = json_decode($sectionIndexTwo[0]->text_template,true);
 
 					<?php if ($dataSectionTwo[0]["route"] != ""): ?>
 
-						<a class="info-box__link" href="<?php echo $dataSectionTwo[0]["route"] ?>"><?php echo $dataSectionTwo[0]["text"] ?></a>
+						<a class="info-box__link" href="<?php echo $path.$dataSectionTwo[0]["route"] ?>"><?php echo $dataSectionTwo[0]["text"] ?></a>
 						
 					<?php endif ?>
 					

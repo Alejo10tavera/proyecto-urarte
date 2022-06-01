@@ -224,10 +224,10 @@ $pageAbout = CurlController::request($url, $method, $fields, $header)->results;
                                         
                                     echo '</ul>
                                     <div class="team-item__img-holder"><img class="img--layout" src="'.$backoffice.'views/img/template/team.png" alt="'.$organization[0]->name_organization.'"/>
-                                        <div class="team-item__img"><img class="img--bg" src="'.$backoffice.'views/img/team/'.$value->image_team.'" alt="teammate"/></div>
+                                        <div class="team-item__img"><img class="img--bg" src="'.$backoffice.'views/img/team/'.$value->image_team.'" alt="'.$organization[0]->name_organization.'"/></div>
                                     </div>
                                     <div class="team-item__description">
-                                        <div class="team-item__name">'.$value->name_team.'</div>
+                                        <div class="team-item__name"><a style="text-decoration:none" href="'.$path.$value->route_team.'">'.$value->name_team.'</a></div>
                                         <div class="team-item__position">'.$value->position_team.'</div>
                                     </div>
                                 </div>
@@ -242,7 +242,7 @@ $pageAbout = CurlController::request($url, $method, $fields, $header)->results;
             </div>
 
             <div class="row">
-                <div class="col-12 text-center"><a class="button button--primary" href="teams">Ver más</a></div>
+                <div class="col-12 text-center"><a class="button button--primary" href="<?php echo $path ?>teams">Ver más</a></div>
             </div>
         </div>
     </section>

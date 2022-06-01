@@ -17,7 +17,6 @@
 					<li><a href="<?php echo $path ?>categories"><span>Categorias</span></a></li>
 					<li><a href="<?php echo $path ?>volunteer"><span>Voluntarios</span></a></li>
 					<li><a href="<?php echo $path ?>events"><span>Eventos</span></a></li>
-					<li><a href="<?php echo $path ?>blogs"><span>Blog</span></a></li>						
 					<li><a href="<?php echo $path ?>gallery"><span>Galeria</span></a></li>
 					<li><a href="<?php echo $path ?>faq"><span>FAQ</span></a></li>
 					<li><a href="<?php echo $path ?>urarte"><span>Urarte</span></a></li>

@@ -32,8 +32,8 @@ $dataVideoSlider = json_decode($videoSlider[0]->text_template,true);
 						
 						echo '<div class="promo-slider__item promo-slider__item--style-1">
 								<picture>
-									<source srcset="'.$backoffice.'views/img/slider/'.$value->image_slider.'" media="(min-width: 835px)"/>
-									<source srcset="'.$backoffice.'views/img/slider/'.$value->imagemobile_slider.'" media="(min-width: 376px)"/><img class="img--bg" src="'.$backoffice.'views/img/slider/'.$value->imagemobile_slider.'" alt="img"/>
+									<source srcset="'.$backoffice.'views/img/slider/'.$value->image_slider.'" media="(min-width: 835px)" style="filter: brightness(50%)"/>
+									<source srcset="'.$backoffice.'views/img/slider/'.$value->imagemobile_slider.'" media="(min-width: 376px)" style="filter: brightness(50%)"/><img class="img--bg" src="'.$backoffice.'views/img/slider/'.$value->imagemobile_slider.'" alt="'.$organization[0]->name_organization.'" style="filter: brightness(50%)"/>
 								</picture>
 								<div class="container">
 									<div class="row">
@@ -59,8 +59,8 @@ $dataVideoSlider = json_decode($videoSlider[0]->text_template,true);
 						
 						echo '<div class="promo-slider__item promo-slider__item--style-2">
 								<picture>
-									<source srcset="'.$backoffice.'views/img/slider/'.$value->image_slider.'" media="(min-width: 835px)"/>
-									<source srcset="'.$backoffice.'views/img/slider/'.$value->imagemobile_slider.'" media="(min-width: 376px)"/><img class="img--bg" src="'.$backoffice.'views/img/slider/'.$value->imagemobile_slider.'" alt="img"/>
+									<source srcset="'.$backoffice.'views/img/slider/'.$value->image_slider.'" media="(min-width: 835px)" style="filter: brightness(50%)"/>
+									<source srcset="'.$backoffice.'views/img/slider/'.$value->imagemobile_slider.'" media="(min-width: 376px)" style="filter: brightness(50%)"/><img class="img--bg" src="'.$backoffice.'views/img/slider/'.$value->imagemobile_slider.'" alt="'.$organization[0]->name_organization.'" style="filter: brightness(50%)"/>
 								</picture>
 								<div class="container">
 									<div class="row">
@@ -86,8 +86,8 @@ $dataVideoSlider = json_decode($videoSlider[0]->text_template,true);
 
 						echo '<div class="promo-slider__item promo-slider__item--style-3">
 								<picture>
-									<source srcset="'.$backoffice.'views/img/slider/'.$value->image_slider.'" media="(min-width: 835px)"/>
-									<source srcset="'.$backoffice.'views/img/slider/'.$value->imagemobile_slider.'" media="(min-width: 376px)"/><img class="img--bg" src="'.$backoffice.'views/img/slider/'.$value->imagemobile_slider.'" alt="img"/>
+									<source srcset="'.$backoffice.'views/img/slider/'.$value->image_slider.'" media="(min-width: 835px)" style="filter: brightness(50%)"/>
+									<source srcset="'.$backoffice.'views/img/slider/'.$value->imagemobile_slider.'" media="(min-width: 376px)" style="filter: brightness(50%)"/><img class="img--bg" src="'.$backoffice.'views/img/slider/'.$value->imagemobile_slider.'" alt="'.$organization[0]->name_organization.'" style="filter: brightness(50%)"/>
 								</picture>
 								<div class="container">
 									<div class="row">

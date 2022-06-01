@@ -35,7 +35,7 @@ $projectOldSocial = json_decode($projectsOld[0]->social_project,true);
 
 								<div class="event-item__content">
 								
-									<h6 class="event-item__title"><a href="'.$value->route_project.'">'.$value->name_project.'</a></h6>
+									<h6 class="event-item__title"><a href="'.$path.$value->route_project.'">'.$value->name_project.'</a></h6>
 									<p>'.$value->email_project.'</p>
 									<p>'.$value->phone_project.'</p>
 									<ul class="aside-socials">';
@@ -63,7 +63,7 @@ $projectOldSocial = json_decode($projectsOld[0]->social_project,true);
 			
 		</div>
 		<div class="row">
-			<div class="col-12 text-center"><a class="button button--primary" href="projects">Ver más</a></div>
+			<div class="col-12 text-center"><a class="button button--primary" href="<?php echo $path ?>projects">Ver más</a></div>
 		</div>
 	</div>
 </section>

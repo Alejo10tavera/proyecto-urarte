@@ -24,7 +24,7 @@ $dataSectionSix = json_decode($sectionIndexSix[0]->text_template,true);
 					<p class="action-block__text"><?php echo $dataSectionFive[0]["description"] ?></p>
 
 					<?php if ($dataSectionFive[0]["route"] != ""): ?>
-						<a class="action-block__link button button--primary" href="<?php echo $dataSectionFive[0]["route"] ?>"><?php echo $dataSectionFive[0]["text"] ?></a>
+						<a class="action-block__link button button--primary" href="<?php echo $path.$dataSectionFive[0]["route"] ?>"><?php echo $dataSectionFive[0]["text"] ?></a>
 					<?php endif ?>
 					
 				</div>
@@ -36,7 +36,7 @@ $dataSectionSix = json_decode($sectionIndexSix[0]->text_template,true);
 					<h3 class="action-block__title"><?php echo $dataSectionSix[0]["title"] ?></h3>
 					<p class="action-block__text"><?php echo $dataSectionSix[0]["description"] ?></p>
 					<?php if ($dataSectionSix[0]["route"] != ""): ?>
-						<a class="action-block__link button button--primary" href="<?php echo $dataSectionSix[0]["route"] ?>"><?php echo $dataSectionSix[0]["text"] ?></a>
+						<a class="action-block__link button button--primary" href="<?php echo $path.$dataSectionSix[0]["route"] ?>"><?php echo $dataSectionSix[0]["text"] ?></a>
 					<?php endif ?>
 				</div>
 			</div>

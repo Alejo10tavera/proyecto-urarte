@@ -46,7 +46,7 @@ $projectsViews = CurlController::request($url, $method, $fields, $header)->resul
 						<div class="projects-masonry__item projects-masonry__item--primary projects-masonry__item--height-2">
 							<div class="projects-masonry__img"><img class="img--bg" style="filter: brightness(40%)" src="'.$backoffice.'views/img/projects/'.$value->id_category.'/logo/'.$value->logo_project.'" alt="'.$value->name_project.'"/>
 								<div class="projects-masonry__inner"><span class="projects-masonry__badge" style="background: '.$value->color_category.';">'.$value->name_category.'</span>
-									<h3 class="projects-masonry__title"> <a href="'.$value->route_project.'">'.$value->name_project.'</a></h3>
+									<h3 class="projects-masonry__title"> <a href="'.$path.$value->route_project.'">'.$value->name_project.'</a></h3>
 									<p>'.$value->headline_project.'</p>
 									
 								</div>
