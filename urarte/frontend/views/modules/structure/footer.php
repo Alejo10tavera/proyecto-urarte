@@ -39,7 +39,6 @@
 						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>projects">Proyectos</a></li>
 						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>events">Eventos</a></li>
 						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>categories">Categorías</a></li>
-						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>blogs">Blog</a></li>
 						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>gallery">Galeria</a></li>
 						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>faq">FAQ</a></li>
 						<li class="footer-menu__item"><a class="footer-menu__link" href="<?php echo $path ?>documents">Documentos</a></li>

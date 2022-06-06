@@ -22,7 +22,6 @@
 								<li><a href="<?php echo $path ?>donors"><span>Donadores</span></a></li>
 								<li><a href="<?php echo $path ?>categories"><span>Categorias</span></a></li>
 								<li><a href="<?php echo $path ?>teams"><span>Equipo</span></a></li>
-								<li><a href="<?php echo $path ?>events"><span>Eventos</span></a></li>
 								<li><a href="<?php echo $path ?>gallery"><span>Galeria</span></a></li>
 								<li><a href="<?php echo $path ?>faq"><span>FAQ</span></a></li>
 								<li><a href="<?php echo $path ?>urarte"><span>Urarte</span></a></li>
@@ -33,8 +32,6 @@
 						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="<?php echo $path ?>projects"><span>Proyectos</span></a></li>
 
 						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="<?php echo $path ?>events"><span>Eventos</span></a></li>
-
-						<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="<?php echo $path ?>blogs"><span>Blog</span></a></li>
 						
 						<li class="main-menu__item"><a class="main-menu__link" href="<?php echo $path ?>contact"><span>Contacto</span></a></li>
 						

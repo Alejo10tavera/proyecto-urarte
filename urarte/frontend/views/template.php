@@ -79,61 +79,46 @@ if(!empty($urlParams[0])){
 		   
 		   	if($urlProducts->status == 404){
 
-		   		/*=============================================
-			    Filtrar blog con el parámetro URL
+		    	/*=============================================
+			    Filtrar equipo con el parámetro URL
 			    =============================================*/
 
-			    $url = CurlController::api()."blogs?linkTo=route_blog&equalTo=".$urlParams[0]."&linkTo_=status_blog&equalTo_=1&select=route_blog";
+			    $url = CurlController::api()."teams?linkTo=route_team&equalTo=".$urlParams[0]."&linkTo_=status_team&equalTo_=1&select=route_team";
 			    $method = "GET";
 			    $fields = array();
 			    $header = array();
 
-			    $urlBlogs = CurlController::request($url, $method, $fields, $header);
-			    
-			    if($urlBlogs->status == 404){
+			    $urlTeams = CurlController::request($url, $method, $fields, $header);
+
+			    if($urlTeams->status == 404){
 
 			    	/*=============================================
-				    Filtrar equipo con el parámetro URL
+				    Filtrar eventos con el parámetro URL
 				    =============================================*/
 
-				    $url = CurlController::api()."teams?linkTo=route_team&equalTo=".$urlParams[0]."&linkTo_=status_team&equalTo_=1&select=route_team";
+				    $url = CurlController::api()."events?linkTo=route_event&equalTo=".$urlParams[0]."&linkTo_=status_event&equalTo_=1&select=route_event";
 				    $method = "GET";
 				    $fields = array();
 				    $header = array();
 
-				    $urlTeams = CurlController::request($url, $method, $fields, $header);
+				    $urlEvents = CurlController::request($url, $method, $fields, $header);
 
-				    if($urlTeams->status == 404){
+				    if($urlEvents->status == 404){
 
 				    	/*=============================================
-					    Filtrar eventos con el parámetro URL
+					    Filtrar paginas con el parámetro URL
 					    =============================================*/
 
-					    $url = CurlController::api()."events?linkTo=route_event&equalTo=".$urlParams[0]."&linkTo_=status_event&equalTo_=1&select=route_event";
+					    $url = CurlController::api()."pages?linkTo=route_page&equalTo=".$urlParams[0]."&linkTo_=status_page&equalTo_=1&select=route_page";
 					    $method = "GET";
 					    $fields = array();
 					    $header = array();
 
-					    $urlEvents = CurlController::request($url, $method, $fields, $header);
+					    $urlPages = CurlController::request($url, $method, $fields, $header);
 
-					    if($urlEvents->status == 404){
+					}
 
-					    	/*=============================================
-						    Filtrar paginas con el parámetro URL
-						    =============================================*/
-
-						    $url = CurlController::api()."pages?linkTo=route_page&equalTo=".$urlParams[0]."&linkTo_=status_page&equalTo_=1&select=route_page";
-						    $method = "GET";
-						    $fields = array();
-						    $header = array();
-
-						    $urlPages = CurlController::request($url, $method, $fields, $header);
-
-						}
-
-				    }
-
-			    }
+			    }		    
 
 		   	}
 
@@ -248,12 +233,7 @@ if(!empty($urlParams[0])){
 							/*Mostrar informacion del producto de una tienda*/
 							include "modules/pages/products/product.php";
 
-						}else if($urlBlogs->status == 200){
-
-							/*Mostrar informacion del blog*/
-							include "modules/pages/blogs/blog.php";
-
-						}else if($urlTeams->status == 200){
+						}else  if($urlTeams->status == 200){
 
 							/*Mostrar informacion del miembro del equipo*/
 							include "modules/pages/teams/team.php";

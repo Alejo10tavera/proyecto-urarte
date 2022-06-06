@@ -30,5 +30,3 @@ include "modules/section_three.php";
 /*Testimonios*/
 include "modules/testimonials.php";
 
-/*blog*/
-include "modules/blog.php";
