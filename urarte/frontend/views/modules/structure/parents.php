@@ -13,7 +13,13 @@ $sponsors = CurlController::request($url, $method, $fields, $header)->results;
 
 ?>
 
-<section class="section donors donors--style-2 no-padding-top no-padding-bottom">
+<div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+	<div class="spinner-border text-muted my-5"></div>
+
+</div>
+
+<section class="section donors donors--style-2 no-padding-top no-padding-bottom preloadFalse">
 	<div class="container">
 		<div class="row margin-bottom">
 			<div class="col-12">

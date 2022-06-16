@@ -1,4 +1,10 @@
-<section class="bottom-background">
+<div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+	<div class="spinner-border text-muted my-5"></div>
+
+</div>	
+
+<section class="bottom-background preloadFalse">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">

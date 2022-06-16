@@ -15,18 +15,52 @@ $pageAbout = CurlController::request($url, $method, $fields, $header)->results;
 
 <?php if ($pageAbout[0]->status_page != 0): ?>
 
+    <div class="container-fluid preloadTrue">
+    
+       <!--  <div class="spinner-border text-muted my-5"></div> -->
+
+       <div class="container">
+
+           <div class="ph-item border-0">
+
+                <div class="ph-col-4">
+                    
+                    <div class="ph-row">
+                        
+                        <div class="ph-col-10"></div>  
+
+                        <div class="ph-col-10 big"></div>  
+
+                        <div class="ph-col-6 big"></div>  
+
+                    </div>
+
+                </div>
+
+                <div class="ph-col-8">
+
+                   <div class="ph-picture"></div> 
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
     <!-- Banner  -->
-    <section class="promo-primary">
+    <section class="promo-primary preloadFalse">
         <picture>
             <source srcset="<?php echo $backoffice ?>views/img/pages/<?php echo $pageAbout[0]->image_page ?>" media="(min-width: 992px)" style="filter: brightness(50%)"/><img class="img--bg" src="<?php echo $backoffice ?>views/img/pages/<?php echo $pageAbout[0]->image_page ?>" alt="<?php echo $organization[0]->name_organization ?>" style="filter: brightness(50%)"/>
         </picture>
-        <div class="promo-primary__description"> <span><?php echo $pageAbout[0]->word_page ?></span></div>
+        <div class="promo-primary__description"> <span><?php echo TemplateController::capitalize(strtolower($pageAbout[0]->word_page)) ?></span></div>
         <div class="container">
             <div class="row">
                 <div class="col-auto">
                     <div class="align-container">
                         <div class="align-container__item"><span class="promo-primary__pre-title"><?php echo $organization[0]->name_organization ?></span>
-                            <h1 class="promo-primary__title"><span><?php echo $pageAbout[0]->name_page ?></span></h1>
+                            <h1 class="promo-primary__title"><span><?php echo TemplateController::capitalize(strtolower($pageAbout[0]->name_page)) ?></span></h1>
                         </div>
                     </div>
                 </div>
@@ -43,7 +77,41 @@ $pageAbout = CurlController::request($url, $method, $fields, $header)->results;
     
     ?>
 
-    <section class="section about-us">
+    <div class="container-fluid preloadTrue">
+    
+       <!--  <div class="spinner-border text-muted my-5"></div> -->
+
+       <div class="container">
+
+           <div class="ph-item border-0">
+
+                <div class="ph-col-6">
+
+                   <div class="ph-picture"></div> 
+
+                </div>
+
+                <div class="ph-col-6">
+                    
+                    <div class="ph-row">
+                        
+                        <div class="ph-col-10"></div>  
+
+                        <div class="ph-col-10 big"></div>  
+
+                        <div class="ph-col-6 big"></div>  
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="section about-us preloadFalse">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-xl-5">
@@ -70,7 +138,41 @@ $pageAbout = CurlController::request($url, $method, $fields, $header)->results;
     
     ?>
 
-    <section class="section about-us about-us--style-2 no-padding-top">
+    <div class="container-fluid preloadTrue">
+    
+       <!--  <div class="spinner-border text-muted my-5"></div> -->
+
+       <div class="container">
+
+           <div class="ph-item border-0">
+
+                <div class="ph-col-6">
+                    
+                    <div class="ph-row">
+                        
+                        <div class="ph-col-10"></div>  
+
+                        <div class="ph-col-10 big"></div>  
+
+                        <div class="ph-col-6 big"></div>  
+
+                    </div>
+
+                </div>
+
+                <div class="ph-col-6">
+
+                   <div class="ph-picture"></div> 
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="section about-us about-us--style-2 no-padding-top preloadFalse">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -92,7 +194,41 @@ $pageAbout = CurlController::request($url, $method, $fields, $header)->results;
     
     ?>
 
-    <section class="section about-us about-us--style-2 no-padding-top">
+    <div class="container-fluid preloadTrue">
+    
+       <!--  <div class="spinner-border text-muted my-5"></div> -->
+
+       <div class="container">
+
+           <div class="ph-item border-0">
+
+                <div class="ph-col-6">
+                    
+                    <div class="ph-row">
+                        
+                        <div class="ph-col-10"></div>  
+
+                        <div class="ph-col-10 big"></div>  
+
+                        <div class="ph-col-6 big"></div>  
+
+                    </div>
+
+                </div>
+
+                <div class="ph-col-6">
+
+                   <div class="ph-picture"></div> 
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="section about-us about-us--style-2 no-padding-top preloadFalse">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-xl-5 offset-xl-1">
@@ -116,7 +252,27 @@ $pageAbout = CurlController::request($url, $method, $fields, $header)->results;
 
     <?php if ($dataAboutVideo[0]["status"] != 0): ?>
 
-        <section class="section video-block no-padding-top">
+        <div class="container-fluid preloadTrue">
+    
+           <!--  <div class="spinner-border text-muted my-5"></div> -->
+
+           <div class="container">
+
+               <div class="ph-item border-0">
+
+                    <div class="ph-col-12">
+
+                       <div class="ph-picture"></div> 
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <section class="section video-block no-padding-top preloadFalse">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -191,8 +347,82 @@ $pageAbout = CurlController::request($url, $method, $fields, $header)->results;
 
     ?>
 
+    <div class="container-fluid preloadTrue">
 
-    <section class="section team">
+        <?php 
+
+            $blocks = [0,1];
+
+        ?>
+
+        <?php foreach ($blocks as $key => $value): ?>
+
+            <!--=====================================
+            Preload
+            ======================================-->           
+                
+            <div class="container">
+
+               <div class="ph-item border-0">
+
+                    <div class="ph-col-4">
+
+                       <div class="ph-picture"></div> 
+
+                        <div class="ph-row">
+                            
+                            <div class="ph-col-12"></div>  
+
+                            <div class="ph-col-12 big"></div>  
+
+                            <div class="ph-col-12 big"></div>  
+
+                        </div>
+
+                    </div>
+
+                    <div class="ph-col-4">
+
+                       <div class="ph-picture"></div> 
+
+                       <div class="ph-row">
+                            
+                            <div class="ph-col-12"></div>  
+
+                            <div class="ph-col-12 big"></div>  
+
+                            <div class="ph-col-12 big"></div>  
+
+                        </div>
+
+                    </div>
+
+                    <div class="ph-col-4">
+
+                       <div class="ph-picture"></div> 
+
+                       <div class="ph-row">
+                            
+                            <div class="ph-col-12"></div>  
+
+                            <div class="ph-col-12 big"></div>  
+
+                            <div class="ph-col-12 big"></div>  
+
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            
+        <?php endforeach ?>
+
+    </div>
+
+    <section class="section team preloadFalse">
         <div class="container">
             <div class="row">
                 <div class="col-12">

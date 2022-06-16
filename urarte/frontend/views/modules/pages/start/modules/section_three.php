@@ -15,7 +15,42 @@ $sectionIndexSix = CurlController::dataTemplates("index_section_six");
 $dataSectionSix = json_decode($sectionIndexSix[0]->text_template,true);
 
 ?>
-<section class="section no-padding-top no-padding-bottom">
+
+<div class="container-fluid preloadTrue">
+
+	<div class="container">
+
+		<div class="row">
+            <div class="col-12 col-sm-6">
+
+                <div class="ph-item border-0">
+                    <div class="ph-col-12">
+                        
+                        
+                        <div class="ph-picture"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 col-sm-6">
+
+                <div class="ph-item border-0">
+                    <div class="ph-col-12">
+                        <div class="ph-picture"></div>
+                        
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+	</div>
+	
+</div>
+
+<section class="section no-padding-top no-padding-bottom preloadFalse">
 	<div class="row no-gutters">
 		<div class="col-xl-6">
 			<div class="action-block">

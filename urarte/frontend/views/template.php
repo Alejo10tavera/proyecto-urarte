@@ -162,6 +162,21 @@ if(!empty($urlParams[0])){
 
 		<!-- styles-->
 		<link rel="stylesheet" href="<?php echo $path ?>views/css/styles.min.css"/>
+		<link rel="stylesheet" href="<?php echo $path ?>views/css/styles_.css"/>
+
+		<!-- Placeholder-loading -->
+	    <!-- https://github.com/zalog/placeholder-loading -->
+	    <!-- https://www.youtube.com/watch?v=JU_sklV_diY -->
+	    <link rel="stylesheet" href="https://unpkg.com/placeholder-loading@0.2.6/dist/css/placeholder-loading.min.css">
+
+		<!-- jQuery library -->
+		<script src="<?php echo $path ?>js/jquery-1.12.4.min.js"></script>
+
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 		<!-- web-font loader-->
 		<script>
@@ -218,7 +233,11 @@ if(!empty($urlParams[0])){
 
 					if(!empty($urlParams[0])){
 
-						if($urlCategories->status == 200){
+						if($urlParams[0] == "account"){
+
+							include "modules/pages/".$urlParams[0]."/".$urlParams[0].".php";	
+
+						}else if($urlCategories->status == 200){
 
 							/*Mostrar todos los proyectos de una categoria*/
 							include "modules/pages/projects/projects.php";
@@ -279,6 +298,7 @@ if(!empty($urlParams[0])){
 		<!-- scripts-->
 		<script src="<?php echo $path ?>views/js/common.min.js"></script>
 		<script src="<?php echo $path ?>views/js/template.js"></script>
+		<script src="<?php echo $path ?>views/js/main.js"></script>
 		
 		<?php include "complement/svg.php" ?>
 

@@ -26,8 +26,42 @@ $dataEvent = CurlController::request($url, $method, $fields, $header)->results;
         $venue = json_decode($dataEvent[0]->venue_event,true);   
 
     ?>
+
+    <div class="container-fluid preloadTrue">
     
-    <section class="promo-primary">
+       <!--  <div class="spinner-border text-muted my-5"></div> -->
+
+       <div class="container">
+
+           <div class="ph-item border-0">
+
+                <div class="ph-col-4">
+                    
+                    <div class="ph-row">
+                        
+                        <div class="ph-col-10"></div>  
+
+                        <div class="ph-col-10 big"></div>  
+
+                        <div class="ph-col-6 big"></div>  
+
+                    </div>
+
+                </div>
+
+                <div class="ph-col-8">
+
+                   <div class="ph-picture"></div> 
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+    
+    <section class="promo-primary preloadFalse">
         <picture>
             <source srcset="<?php echo $backoffice ?>views/img/events/cover/<?php echo $dataEvent[0]->cover_event ?>" style="filter: brightness(50%)" media="(min-width: 992px)"/><img class="img--bg" src="<?php echo $backoffice ?>views/img/events/cover/<?php echo $dataEvent[0]->cover_event ?>" style="filter: brightness(50%)" alt="<?php echo $dataEvent[0]->name_event ?>"/>
         </picture>
@@ -36,15 +70,22 @@ $dataEvent = CurlController::request($url, $method, $fields, $header)->results;
                 <div class="col-auto">
                     <div class="align-container">
                         <div class="align-container__item"><span class="promo-primary__pre-title"><?php echo $organization[0]->name_organization ?></span>
-                            <h1 class="promo-primary__title"><span><?php echo $dataEvent[0]->name_event ?></span></h1>
+                            <h1 class="promo-primary__title"><span><?php echo TemplateController::capitalize(strtolower($dataEvent[0]->name_event)) ?></span></h1>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+       <div class="spinner-border text-muted my-5"></div>
+
+    </div>
+
     <!-- article start-->
-    <section class="section article"><img class="article__bg" src="<?php echo $backoffice ?>views/img/template/events_inner-bg.png" alt="<?php echo $organization[0]->name_organization ?>"/>
+    <section class="section article preloadFalse"><img class="article__bg" src="<?php echo $backoffice ?>views/img/template/events_inner-bg.png" alt="<?php echo $organization[0]->name_organization ?>"/>
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">

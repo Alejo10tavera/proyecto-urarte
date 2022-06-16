@@ -13,7 +13,30 @@ $testimonials = CurlController::request($url, $method, $fields, $header)->result
 
 ?>
 
-<section class="section testimonials testimonials--style-1">
+<div class="container-fluid preloadTrue">
+
+	<div class="container">
+
+		<div class="ph-item border-0">
+
+		    <div class="ph-col-12">
+		        <div class="ph-picture"></div>
+		        <div class="ph-row">
+		            <div class="ph-col-6 big"></div>
+		            <div class="ph-col-4 empty big"></div>
+		            <div class="ph-col-2 big"></div>
+		            <div class="ph-col-4"></div>
+		            <div class="ph-col-8 empty"></div>
+		        </div>
+		    </div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<section class="section testimonials testimonials--style-1 preloadFalse">
 	<div class="container">
 		<div class="row align-items-end margin-bottom">
 			<div class="col-lg-8 col-xl-7 offset-xl-1">

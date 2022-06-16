@@ -1,4 +1,10 @@
-<header class="header header--front_3">
+<div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+	<div class="spinner-border text-muted my-5"></div>
+
+</div>
+
+<header class="header header--front_3 preloadFalse">
 	<div class="container-fluid">
 		<div class="row no-gutters justify-content-between">
 			<div class="col-auto d-flex align-items-center">
@@ -43,7 +49,7 @@
 			<div class="col-auto d-flex align-items-center">
 				<!-- lang select start-->
 				<ul class="lang-select">
-					<li class="main-menu__item"><a class="main-menu__link" href="<?php echo $path ?>login"><span>Mi cuenta</span></a></li>
+					<li class="main-menu__item"><a class="main-menu__link" href="<?php echo $path ?>account&login"><span>Mi cuenta</span></a></li>
 				</ul>
 				
 				<a class="button button--squared" href="<?php echo $path ?>donate"><span>Donar</span></a>

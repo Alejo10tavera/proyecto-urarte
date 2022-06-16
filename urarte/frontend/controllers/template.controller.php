@@ -32,5 +32,16 @@ class TemplateController{
 
 	}
 
+	/*=============================================
+	Función para mayúscula inicial
+	=============================================*/
+
+	static public function capitalize($value){
+
+		$text = str_replace("_", " ", $value);
+
+		return ucwords($text);
+		
+	}
 
 }

@@ -59,18 +59,52 @@ $pageEvents = CurlController::request($url, $method, $fields, $header)->results;
 
     <?php if ($dataEvents != "Not Found"): ?>
 
+        <div class="container-fluid preloadTrue">
+    
+           <!--  <div class="spinner-border text-muted my-5"></div> -->
+
+           <div class="container">
+
+               <div class="ph-item border-0">
+
+                    <div class="ph-col-4">
+                        
+                        <div class="ph-row">
+                            
+                            <div class="ph-col-10"></div>  
+
+                            <div class="ph-col-10 big"></div>  
+
+                            <div class="ph-col-6 big"></div>  
+
+                        </div>
+
+                    </div>
+
+                    <div class="ph-col-8">
+
+                       <div class="ph-picture"></div> 
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
         <!-- Banner  -->
-        <section class="promo-primary">
+        <section class="promo-primary preloadFalse">
             <picture>
                 <source srcset="<?php echo $backoffice ?>views/img/pages/<?php echo $pageEvents[0]->image_page ?>" media="(min-width: 992px)" style="filter: brightness(50%)"/><img class="img--bg" src="<?php echo $backoffice ?>views/img/pages/<?php echo $pageEvents[0]->image_page ?>" alt="<?php echo $organization[0]->name_organization ?>" style="filter: brightness(50%)"/>
             </picture>
-            <div class="promo-primary__description"> <span><?php echo $pageEvents[0]->word_page ?></span></div>
+            <div class="promo-primary__description"> <span><?php echo TemplateController::capitalize(strtolower($pageEvents[0]->word_page)) ?></span></div>
             <div class="container">
                 <div class="row">
                     <div class="col-auto">
                         <div class="align-container">
                             <div class="align-container__item"><span class="promo-primary__pre-title"><?php echo $organization[0]->name_organization ?></span>
-                                <h1 class="promo-primary__title"><span><?php echo $pageEvents[0]->name_page ?></span></h1>
+                                <h1 class="promo-primary__title"><span><?php echo TemplateController::capitalize(strtolower($pageEvents[0]->name_page)) ?></span></h1>
                             </div>
                         </div>
                     </div>
@@ -78,8 +112,58 @@ $pageEvents = CurlController::request($url, $method, $fields, $header)->results;
             </div>
         </section>
 
+
+        <div class="container-fluid preloadTrue">
+
+            <?php 
+
+                $blocks = [0,1];
+
+            ?>
+
+            <?php foreach ($blocks as $key => $value): ?>
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-12">
+
+                            <div class="ph-item border-0">
+
+                                <div class="ph-col-4">
+
+                                   <div class="ph-picture"></div> 
+
+                                </div>
+
+                                <div class="ph-col-8">
+                                    
+                                    <div class="ph-row">
+                                        
+                                        <div class="ph-col-10"></div>  
+
+                                        <div class="ph-col-10 big"></div>  
+
+                                        <div class="ph-col-6 big"></div>  
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                
+            <?php endforeach ?>
+            
+        </div>
+
         <!-- events inner start-->
-        <section class="section events-inner"><img class="events-inner__bg" src="<?php echo $backoffice ?>views/img/template/events_inner-bg.png" alt="<?php echo $organization[0]->name_organization ?>"/>
+        <section class="section events-inner preloadFalse"><img class="events-inner__bg" src="<?php echo $backoffice ?>views/img/template/events_inner-bg.png" alt="<?php echo $organization[0]->name_organization ?>"/>
             <div class="container">
                 <div class="row offset-30">
 
@@ -103,7 +187,7 @@ $pageEvents = CurlController::request($url, $method, $fields, $header)->results;
                             
                             echo '<div class="col-xl-10 offset-xl-1">
                                     <div class="upcoming-item">
-                                        <div class="upcoming-item__date"> Faltan <span> '. $diff->days.'</span><span> días</span></div>
+                                        <div class="upcoming-item__date"> Faltan <span> '.$diff->days.'</span><span> días</span></div>
                                         <div class="upcoming-item__body">
                                             <div class="row align-items-center">
                                                 <div class="col-lg-5 col-xl-4">
@@ -111,7 +195,7 @@ $pageEvents = CurlController::request($url, $method, $fields, $header)->results;
                                                 </div>
                                                 <div class="col-lg-7 col-xl-8">
                                                     <div class="upcoming-item__description">
-                                                        <h6 class="upcoming-item__title"><a href="'.$path.$value->route_event.'">'.$value->name_event.'</a></h6>
+                                                        <h6 class="upcoming-item__title"><a href="'.$path.$value->route_event.'">'.TemplateController::capitalize(strtolower($value->name_event)).'</a></h6>
                                                         <p>'.$value->headline_event.'</p>
                                                         <div class="upcoming-item__details">
                                                             <p>

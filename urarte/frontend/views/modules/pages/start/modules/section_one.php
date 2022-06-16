@@ -16,7 +16,51 @@ $dataSectionTwo = json_decode($sectionIndexTwo[0]->text_template,true);
 
 ?>
 
-<section class="section about-us background--brown">
+<div class="container-fluid preloadTrue">
+
+	<div class="container">
+
+		<div class="row">
+            <div class="col-12 col-sm-6">
+
+                <div class="ph-item border-0">
+                    <div class="ph-col-12">
+                        
+                        <div class="ph-row">
+                            <div class="ph-col-4"></div>
+                            <div class="ph-col-8 empty"></div>
+                            <div class="ph-col-12"></div>
+                            <div class="ph-col-12"></div>
+                        </div>
+                        <div class="ph-picture"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 col-sm-6">
+
+                <div class="ph-item border-0">
+                    <div class="ph-col-12">
+                        <div class="ph-picture"></div>
+                        <div class="ph-row">
+                            <div class="ph-col-4"></div>
+                            <div class="ph-col-8 empty"></div>
+                            <div class="ph-col-12"></div>
+                            <div class="ph-col-12"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+	</div>
+	
+</div>
+
+<section class="section about-us background--brown preloadFalse">
 	<div class="container">
 		<div class="row align-items-center">
 			<!-- Primera seccion -->

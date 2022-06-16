@@ -23,8 +23,42 @@
 
     ?>
 
+    <div class="container-fluid preloadTrue">
+    
+       <!--  <div class="spinner-border text-muted my-5"></div> -->
+
+       <div class="container">
+
+           <div class="ph-item border-0">
+
+                <div class="ph-col-4">
+                    
+                    <div class="ph-row">
+                        
+                        <div class="ph-col-10"></div>  
+
+                        <div class="ph-col-10 big"></div>  
+
+                        <div class="ph-col-6 big"></div>  
+
+                    </div>
+
+                </div>
+
+                <div class="ph-col-8">
+
+                   <div class="ph-picture"></div> 
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
     <!-- section start-->
-    <section class="section team-member no-padding-bottom">
+    <section class="section team-member no-padding-bottom preloadFalse">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-xl-5">
@@ -34,14 +68,21 @@
                 </div>
                 <div class="col-lg-6 col-xl-6 offset-xl-1">
                     <div class="heading heading--primary"><span class="heading__pre-title"><?php echo $dataTeam[0]->position_team ?></span>
-                        <h2 class="heading__title"><span><?php echo $dataTeam[0]->name_team ?></span></h2>
+                        <h2 class="heading__title"><span><?php echo TemplateController::capitalize(strtolower($dataTeam[0]->name_team)) ?></span></h2>
                         <?php echo $dataTeam[0]->description_team ?>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section team-member">
+
+    <div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+       <div class="spinner-border text-muted my-5"></div>
+
+    </div>
+
+    <section class="section team-member preloadFalse">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-xl-5">

@@ -15,18 +15,52 @@ $pageContact = CurlController::request($url, $method, $fields, $header)->results
 
 <?php if ($pageContact[0]->status_page != 0): ?>
 
+    <div class="container-fluid preloadTrue">
+    
+       <!--  <div class="spinner-border text-muted my-5"></div> -->
+
+       <div class="container">
+
+           <div class="ph-item border-0">
+
+                <div class="ph-col-4">
+                    
+                    <div class="ph-row">
+                        
+                        <div class="ph-col-10"></div>  
+
+                        <div class="ph-col-10 big"></div>  
+
+                        <div class="ph-col-6 big"></div>  
+
+                    </div>
+
+                </div>
+
+                <div class="ph-col-8">
+
+                   <div class="ph-picture"></div> 
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
     <!-- Banner  -->
-    <section class="promo-primary">
+    <section class="promo-primary preloadFalse">
         <picture>
             <source srcset="<?php echo $backoffice ?>views/img/pages/<?php echo $pageContact[0]->image_page ?>" media="(min-width: 992px)" style="filter: brightness(50%)"/><img class="img--bg" src="<?php echo $backoffice ?>views/img/pages/<?php echo $pageContact[0]->image_page ?>" alt="<?php echo $organization[0]->name_organization ?>" style="filter: brightness(50%)"/>
         </picture>
-        <div class="promo-primary__description"> <span><?php echo $pageContact[0]->word_page ?></span></div>
+        <div class="promo-primary__description"> <span><?php echo TemplateController::capitalize(strtolower($pageContact[0]->word_page)) ?></span></div>
         <div class="container">
             <div class="row">
                 <div class="col-auto">
                     <div class="align-container">
                         <div class="align-container__item"><span class="promo-primary__pre-title"><?php echo $organization[0]->name_organization ?></span>
-                            <h1 class="promo-primary__title"><span><?php echo $pageContact[0]->name_page ?></span></h1>
+                            <h1 class="promo-primary__title"><span><?php echo TemplateController::capitalize(strtolower($pageContact[0]->name_page)) ?></span></h1>
                         </div>
                     </div>
                 </div>
@@ -34,8 +68,14 @@ $pageContact = CurlController::request($url, $method, $fields, $header)->results
         </div>
     </section>
 
+    <div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+       <div class="spinner-border text-muted my-5"></div>
+
+    </div>
+
     <!-- section start-->
-    <section class="section contacts">
+    <section class="section contacts preloadFalse">
         <div class="container">
             <div class="row offset-margin">
                 <div class="col-sm-6 col-lg-3">

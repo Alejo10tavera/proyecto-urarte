@@ -1,4 +1,10 @@
-<footer class="footer footer--front_3">
+<div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+	<div class="spinner-border text-muted my-5"></div>
+
+</div>	
+
+<footer class="footer footer--front_3 preloadFalse">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4">

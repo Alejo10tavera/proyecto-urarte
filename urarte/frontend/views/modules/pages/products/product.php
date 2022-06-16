@@ -17,7 +17,7 @@ Actualizar las vistas del producto
 
 $view = $infoDataProduct[0]->views_project+1;
 
-$url = CurlController::api()."products?id=".$infoDataProduct[0]->id_product."&nameId=id_product&linkTo_=status_product&equalTo_=1";       
+$url = CurlController::api()."products?id=".$infoDataProduct[0]->id_product."&nameId=id_product&linkTo_=status_product&equalTo_=1&token=no&except=views_product";       
 $method = "PUT";
 $fields =  "views_product=".$view;
 $header = array();
@@ -28,17 +28,51 @@ $updateViewsProduct = CurlController::request($url, $method, $fields, $header);
 
 <?php if ($infoDataProduct != "Not Found"): ?>
 
-    <section class="promo-primary promo-primary--elements">
+    <div class="container-fluid preloadTrue">
+    
+       <!--  <div class="spinner-border text-muted my-5"></div> -->
+
+       <div class="container">
+
+           <div class="ph-item border-0">
+
+                <div class="ph-col-4">
+                    
+                    <div class="ph-row">
+                        
+                        <div class="ph-col-10"></div>  
+
+                        <div class="ph-col-10 big"></div>  
+
+                        <div class="ph-col-6 big"></div>  
+
+                    </div>
+
+                </div>
+
+                <div class="ph-col-8">
+
+                   <div class="ph-picture"></div> 
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="promo-primary promo-primary--elements preloadFalse">
         <picture>
             <source srcset="<?php echo $backoffice ?>views/img/projects/<?php echo $infoDataProduct[0]->id_category_project ?>/cover/<?php echo $infoDataProduct[0]->cover_project ?>" media="(min-width: 992px)"/><img class="img--bg" src="<?php echo $backoffice ?>views/img/projects/<?php echo $infoDataProduct[0]->id_category_project ?>/cover/<?php echo $infoDataProduct[0]->cover_project ?>" alt="<?php echo $infoDataProduct[0]->name_project ?>" style="filter: brightness(50%)"/>
         </picture>
-        <div class="promo-primary__description"> <span><?php echo $infoDataProduct[0]->name_project ?></span></div>
+        <div class="promo-primary__description"> <span><?php echo TemplateController::capitalize(strtolower($infoDataProduct[0]->name_project)) ?></span></div>
         <div class="container">
             <div class="row">
                 <div class="col-auto">
                     <div class="align-container">
                         <div class="align-container__item"><span class="promo-primary__pre-title"><?php echo $organization[0]->name_organization ?></span>
-                            <h1 class="promo-primary__title"><span><?php echo $infoDataProduct[0]->name_product ?></span></h1>
+                            <h1 class="promo-primary__title"><span><?php echo TemplateController::capitalize(strtolower($infoDataProduct[0]->name_product)) ?></span></h1>
                         </div>
                     </div>
                 </div>
@@ -46,8 +80,14 @@ $updateViewsProduct = CurlController::request($url, $method, $fields, $header);
         </div>
     </section>
 
+    <div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+       <div class="spinner-border text-muted my-5"></div>
+
+    </div>
+
     <!-- shop product start-->
-    <section class="section shop-product background--brown">
+    <section class="section shop-product background--brown preloadFalse">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-0">
@@ -99,7 +139,7 @@ $updateViewsProduct = CurlController::request($url, $method, $fields, $header);
                 </div>
                 <div class="col-lg-6 col-xl-5 offset-xl-1">
                     <div class="shop-product__top">
-                        <h3 class="shop-product__name"><?php echo $infoDataProduct[0]->name_product ?></h3>
+                        <h3 class="shop-product__name"><?php echo TemplateController::capitalize(strtolower($infoDataProduct[0]->name_product)) ?></h3>
                         <h4 class="shop-product__price">$ <?php echo number_format($infoDataProduct[0]->price_product,0,",",".") ?></h4>
                     </div>
                     <div class="shop-product__description">
@@ -159,7 +199,88 @@ $updateViewsProduct = CurlController::request($url, $method, $fields, $header);
 
     <?php if ($productsRelated != "Not Found"): ?>
 
-        <section class="section background--brown">
+        <div class="container-fluid preloadTrue">
+
+            <?php 
+
+                $blocks = [0];
+
+            ?>
+
+            <?php foreach ($blocks as $key => $value): ?>
+
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-12 col-sm-3">
+
+                            <div class="ph-item border-0">
+                                <div class="ph-col-12">
+                                    <div class="ph-picture"></div>
+                                    <div class="ph-row">
+                                        <div class="ph-col-4"></div>
+                                        <div class="ph-col-8 empty"></div>
+                                        <div class="ph-col-12"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-sm-3">
+
+                            <div class="ph-item border-0">
+                                <div class="ph-col-12">
+                                    <div class="ph-picture"></div>
+                                    <div class="ph-row">
+                                        <div class="ph-col-4"></div>
+                                        <div class="ph-col-8 empty"></div>
+                                        <div class="ph-col-12"></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-sm-3">
+
+                            <div class="ph-item border-0">
+                                <div class="ph-col-12">
+                                    <div class="ph-picture"></div>
+                                    <div class="ph-row">
+                                        <div class="ph-col-4"></div>
+                                        <div class="ph-col-8 empty"></div>
+                                        <div class="ph-col-12"></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-sm-3">
+
+                            <div class="ph-item border-0">
+                                <div class="ph-col-12">
+                                    <div class="ph-picture"></div>
+                                    <div class="ph-row">
+                                        <div class="ph-col-4"></div>
+                                        <div class="ph-col-8 empty"></div>
+                                        <div class="ph-col-12"></div>
+                                        <div class="ph-col-12"></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                
+            <?php endforeach ?>
+            
+        </div>
+
+        <section class="section background--brown preloadFalse">
             <div class="container">
                 <div class="row align-items-end margin-bottom">
                     <div class="col-md-7 col-lg-8">
@@ -191,12 +312,12 @@ $updateViewsProduct = CurlController::request($url, $method, $fields, $header);
                                     echo '<div class="related-slider__item">
                                             <div class="shop-item">
                                                 <div class="shop-item__img">
-                                                    <a class="shop-item__add" href="https://api.whatsapp.com/send?phone=57'.str_replace(' ', '',$infoDataProduct[0]->phone_project).'&text=Hola,%20'.$infoDataProduct[0]->name_project.'%20Estoy%20interesado%20en%20este%20producto%20'.$infoDataProduct[0]->name_product.'" target="_blank">
+                                                    <a class="shop-item__add" href="https://api.whatsapp.com/send?phone=57'.str_replace(' ', '',$infoDataProduct[0]->phone_project).'&text=Hola,%20'.TemplateController::capitalize(strtolower($value->name_project)).'%20Estoy%20interesado%20en%20este%20producto%20'.TemplateController::capitalize(strtolower($value->name_product)).'" target="_blank">
                                                     <svg class="icon">
                                                         <use xlink:href="#bag"></use>
                                                     </svg><span>Preguntar</span></a><img class="img--contain" src="'.$backoffice.'views/img/projects/'.$value->id_category_project.'/products/'.$value->image_product.'" alt="'.$value->name_project.'"/></div>
                                                 <div class="shop-item__details">
-                                                    <h6 class="shop-item__name"><a href="'.$path.$value->route_product.'">'.$value->name_product.'</a></h6><span class="shop-item__price">$ '.number_format($value->price_product,0,",",".").'</span>
+                                                    <h6 class="shop-item__name"><a href="'.$path.$value->route_product.'">'.TemplateController::capitalize(strtolower($value->name_product)).'</a></h6><span class="shop-item__price">$ '.number_format($value->price_product,0,",",".").'</span>
                                                 </div>
                                             </div>
                                         </div>';

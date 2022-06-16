@@ -17,7 +17,7 @@ $dataSection404 = json_decode($section404[0]->text_template,true);
                 <div class="align-container">
                     <div class="align-container__item">
                         <h1 class="error__title">404</h1>
-                        <h3 class="error__subtitle"><?php echo $dataSection404[0]["title"] ?></h3>
+                        <h3 class="error__subtitle"><?php echo TemplateController::capitalize(strtolower($dataSection404[0]["title"])) ?></h3>
                         <p class="error__text"><?php echo $dataSection404[0]["description"] ?></p><a class="button button--primary" href="/">Inicio</a>
                     </div>
                 </div>

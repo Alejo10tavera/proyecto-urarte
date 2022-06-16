@@ -15,23 +15,63 @@ $pageDonor = CurlController::request($url, $method, $fields, $header)->results;
 
 <?php if ($pageDonor[0]->status_page != 0): ?>
 
-    <section class="promo-primary">
+    <div class="container-fluid preloadTrue">
+    
+       <!--  <div class="spinner-border text-muted my-5"></div> -->
+
+       <div class="container">
+
+           <div class="ph-item border-0">
+
+                <div class="ph-col-4">
+                    
+                    <div class="ph-row">
+                        
+                        <div class="ph-col-10"></div>  
+
+                        <div class="ph-col-10 big"></div>  
+
+                        <div class="ph-col-6 big"></div>  
+
+                    </div>
+
+                </div>
+
+                <div class="ph-col-8">
+
+                   <div class="ph-picture"></div> 
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="promo-primary preloadFalse">
         <picture>
             <source srcset="<?php echo $backoffice ?>views/img/pages/<?php echo $pageDonor[0]->image_page ?>" media="(min-width: 992px)" style="filter: brightness(50%)"/><img class="img--bg" src="<?php echo $backoffice ?>views/img/pages/<?php echo $pageDonor[0]->image_page ?>" alt="<?php echo $organization[0]->name_organization ?>" style="filter: brightness(50%)"/>
         </picture>
-        <div class="promo-primary__description"> <span><?php echo $pageDonor[0]->word_page ?></span></div>
+        <div class="promo-primary__description"> <span><?php echo TemplateController::capitalize(strtolower($pageDonor[0]->word_page)) ?></span></div>
             <div class="container">
                 <div class="row">
                     <div class="col-auto">
                         <div class="align-container">
                             <div class="align-container__item"><span class="promo-primary__pre-title"><?php echo $organization[0]->name_organization ?></span>
-                                <h1 class="promo-primary__title"><span><?php echo $pageDonor[0]->name_page ?></span></h1>
+                                <h1 class="promo-primary__title"><span><?php echo TemplateController::capitalize(strtolower($pageDonor[0]->name_page)) ?></span></h1>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
     </section>
+
+    <div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+       <div class="spinner-border text-muted my-5"></div>
+
+    </div>
 
     <?php 
 
@@ -42,7 +82,7 @@ $pageDonor = CurlController::request($url, $method, $fields, $header)->results;
     
     ?>
 
-    <section class="section donors-inner"><img class="donors-inner__bg" src="<?php echo $backoffice ?>views/img/template/donors_inner.png" alt="<?php echo $organization[0]->name_organization ?>"/>
+    <section class="section donors-inner preloadFalse"><img class="donors-inner__bg" src="<?php echo $backoffice ?>views/img/template/donors_inner.png" alt="<?php echo $organization[0]->name_organization ?>"/>
         <div class="container">
             <div class="row margin-bottom">
                 <div class="col-12">
@@ -96,7 +136,13 @@ $pageDonor = CurlController::request($url, $method, $fields, $header)->results;
     
     ?>
 
-    <section class="section info no-padding-top">
+    <div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+       <div class="spinner-border text-muted my-5"></div>
+
+    </div>
+
+    <section class="section info no-padding-top preloadFalse">
         <div class="container">
             <div class="row align-items-start margin-bottom">
                 <div class="col-xl-12">
@@ -121,9 +167,15 @@ $pageDonor = CurlController::request($url, $method, $fields, $header)->results;
         $sectionDonorThree = CurlController::dataTemplates("donors_section_three");
         $dataDonorThree = json_decode($sectionDonorThree[0]->text_template,true);
         
-    ?>        
+    ?>    
 
-    <section class="section no-padding-top">
+    <div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+       <div class="spinner-border text-muted my-5"></div>
+
+    </div>    
+
+    <section class="section no-padding-top preloadFalse">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -157,9 +209,15 @@ $pageDonor = CurlController::request($url, $method, $fields, $header)->results;
         $dataDonorFour = json_decode($sectionDonorFour[0]->text_template,true);
         
         
-    ?>    
+    ?>   
 
-    <section class="section text-section text-section--style-2"><img class="text-section__bg-left" src="<?php echo $backoffice ?>views/img/template/text-section_left.png" alt="<?php echo $organization[0]->name_organization ?>"/><img class="text-section__bg-right" src="<?php echo $backoffice ?>views/img/template/text-section_right.png" alt="<?php echo $organization[0]->name_organization ?>"/>
+    <div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+       <div class="spinner-border text-muted my-5"></div>
+
+    </div> 
+
+    <section class="section text-section text-section--style-2 preloadFalse"><img class="text-section__bg-left" src="<?php echo $backoffice ?>views/img/template/text-section_left.png" alt="<?php echo $organization[0]->name_organization ?>"/><img class="text-section__bg-right" src="<?php echo $backoffice ?>views/img/template/text-section_right.png" alt="<?php echo $organization[0]->name_organization ?>"/>
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">

@@ -19,7 +19,46 @@ $videoSlider = CurlController::dataTemplates("index_section_slider");
 $dataVideoSlider = json_decode($videoSlider[0]->text_template,true);
 
 ?>
-<section class="promo promo--front_3">
+
+<div class="container-fluid preloadTrue">
+    
+   <!--  <div class="spinner-border text-muted my-5"></div> -->
+
+   <div class="container">
+
+       <div class="ph-item border-0">
+
+            <div class="ph-col-4">
+                
+                <div class="ph-row">
+                    
+                    <div class="ph-col-10"></div>  
+
+                    <div class="ph-col-10 big"></div>  
+
+                    <div class="ph-col-6 big"></div>  
+
+                    <div class="ph-col-6 empty"></div>  
+
+                    <div class="ph-col-6 big"></div> 
+
+                </div>
+
+            </div>
+
+            <div class="ph-col-8">
+
+               <div class="ph-picture"></div> 
+
+            </div>
+            
+        </div>
+
+    </div>
+
+</div>
+
+<section class="promo promo--front_3 preloadFalse">
 	
 	<div class="promo-slider">
 		<?php 

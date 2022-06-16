@@ -1,4 +1,10 @@
-<div class="aside-dropdown">
+<div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+	<div class="spinner-border text-muted my-5"></div>
+
+</div>
+
+<div class="aside-dropdown preloadFalse">
 	<div class="aside-dropdown__inner"><span class="aside-dropdown__close">
 		<svg class="icon">
 			<use xlink:href="#close"></use>

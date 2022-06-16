@@ -1,4 +1,10 @@
-<div class="top-bar d-none d-lg-block">
+<div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+	<div class="spinner-border text-muted my-5"></div>
+
+</div>
+
+<div class="top-bar d-none d-lg-block preloadFalse">
 
 	<div class="container-fluid">
 
