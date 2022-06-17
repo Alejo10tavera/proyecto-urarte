@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-06-2022 a las 23:17:52
+-- Tiempo de generación: 17-06-2022 a las 20:36:57
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -860,7 +860,7 @@ CREATE TABLE `users` (
   `token_user` text DEFAULT NULL,
   `token_exp_user` text DEFAULT NULL,
   `method_user` text DEFAULT NULL,
-  `verification_user` int(11) DEFAULT NULL,
+  `verification_user` int(11) NOT NULL DEFAULT 0,
   `status_user` int(11) DEFAULT NULL,
   `bdelete_user` int(11) DEFAULT NULL,
   `date_add_user` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -873,8 +873,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `rol_user`, `picture_user`, `displayname_user`, `username_user`, `password_user`, `email_user`, `token_user`, `token_exp_user`, `method_user`, `verification_user`, `status_user`, `bdelete_user`, `date_add_user`, `date_modify_user`) VALUES
 (1, 'default', '', 'Gilbert Maxiliun', 'maximiluin', '', 'maximiluin@gmail.com', '', '', 'direct', 1, 1, 0, '2022-05-05 04:21:04', '2022-05-05 04:21:36'),
-(5, 'default', NULL, 'Alejandro Tavera', 'Alejo', '$2a$07$azybxcags23425sdg23sdeekOQFHK/jVkZZZ5LZAAHZFT/hjtleHa', 'alejandro@urarte.com', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTE5MDExMTIsImV4cCI6MTY1MTk4NzUxMiwiZGF0YSI6eyJpZCI6NSwiZW1haWwiOiJhbGVqYW5kcm9AdXJhcnRlLmNvbSJ9fQ.WxUDXixMlMtubYdla86BFtGStVN5FKOBqUw9DfqCHvc', '1651987512', 'direct', NULL, 1, 0, '2022-05-07 04:43:49', '2022-05-07 05:25:12'),
-(6, 'default', NULL, 'Alejandro Tavera', 'alejandro', '$2a$07$azybxcags23425sdg23sdeekOQFHK/jVkZZZ5LZAAHZFT/hjtleHa', 'alejandro@correo.com', NULL, NULL, 'direct', NULL, NULL, NULL, '2022-06-15 19:58:38', '2022-06-15 19:58:38');
+(5, 'default', NULL, 'Alejandro Tavera', 'Alejo', '$2a$07$azybxcags23425sdg23sdeekOQFHK/jVkZZZ5LZAAHZFT/hjtleHa', 'alejandro@urarte.com', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU0ODg4NDEsImV4cCI6MTY1NTU3NTI0MSwiZGF0YSI6eyJpZCI6NSwiZW1haWwiOiJhbGVqYW5kcm9AdXJhcnRlLmNvbSJ9fQ.KE5CozyArUkCPMkgePa3dzlMlHTunNUmGCd9NHtgqNk', '1655575241', 'direct', 1, 1, 0, '2022-05-07 04:43:49', '2022-06-17 18:00:41'),
+(7, 'default', NULL, 'Jose Luis', 'jose', '$2a$07$azybxcags23425sdg23sdee5J5oPo6KabPYFUxE/fHC4DE270YSzK', 'jose@urarte.com', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU0ODkwNDUsImV4cCI6MTY1NTU3NTQ0NSwiZGF0YSI6eyJpZCI6NywiZW1haWwiOiJqb3NlQHVyYXJ0ZS5jb20ifX0.GZiXfoycWZRmORIVEVTVTTo7ZWN1x8Mcz5_hxggGKLc', '1655575445', 'direct', 0, 1, 0, '2022-06-17 18:01:39', '2022-06-17 18:04:05'),
+(8, 'default', NULL, 'Alejandro Tavera', 'alejandro', '$2a$07$azybxcags23425sdg23sdeekOQFHK/jVkZZZ5LZAAHZFT/hjtleHa', 'alejandro@correo.com', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU0OTAyOTYsImV4cCI6MTY1NTU3NjY5NiwiZGF0YSI6eyJpZCI6OCwiZW1haWwiOiJhbGVqYW5kcm9AY29ycmVvLmNvbSJ9fQ.mgNTb7DydFxGEAnSNVPquJdD73sZohtSPw-x-1XKmrs', '1655576696', 'direct', 1, 1, 0, '2022-06-17 18:13:31', '2022-06-17 18:24:56');
 
 --
 -- Índices para tablas volcadas
@@ -1098,7 +1099,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

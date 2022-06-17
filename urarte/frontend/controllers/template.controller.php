@@ -1,5 +1,8 @@
 <?php 
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 class TemplateController{
 
 	/*=============================================
@@ -43,5 +46,62 @@ class TemplateController{
 		return ucwords($text);
 		
 	}
+
+	/*================================================================
+	=            Funcion para enviar correos electronicos            =
+	================================================================*/
+	
+	static public function sendEmail($name, $subject, $email, $message, $url){
+
+		date_default_timezone_set("America/Bogota");
+
+		$mail = new PHPMailer;
+
+		$mail->Charset = "UTF-8";
+
+		$mail->isMail();
+
+		$mail->setFrom("urarte@urarte.com", "Soporte urarte");
+
+		$mail->Subject = "Hi ".$name." - ".$subject;
+
+		$mail->addAddress($email);
+
+		$mail->msgHTML(' 
+
+			<div>
+
+				Hi, '.$name.':
+
+				<p>'.$message.'</p>
+
+				<a href="'.$url.'">Click aquí para más información</a>
+
+				If you didn’t ask to verify this address, you can ignore this email.
+
+				Thanks,
+
+				Your Urarte Team
+
+			</div>
+
+		');
+
+		$send = $mail->Send();
+
+		if(!$send){
+
+			return $mail->ErrorInfo;	
+
+		}else{
+
+			return "ok";
+
+		}
+
+	}
+	
+	/*=====  End of Funcion para enviar correos electronicos  ======*/
+	
 
 }
