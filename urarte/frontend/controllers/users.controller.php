@@ -58,7 +58,15 @@ class UsersController{
 
 					if($sendEmail == "ok"){
 
-						echo '<div class="alert alert-success">Registered user successfully, confirm your account in your email (check spam)</div>
+						echo '<div class="alert alert--success alert--transparent">
+								Usuario registrado con éxito, confirme su cuenta en su correo electrónico (revisar spam)
+								<span class="alert__close">
+									<svg class="icon">
+										<use xlink:href="#close"></use>
+									</svg>
+								</span>
+							</div>
+						
 
 						<script>
 
@@ -68,7 +76,14 @@ class UsersController{
 
 					}else{
 
-						echo '<div class="alert alert-danger">'.$sendEmail.'</div>
+						echo '<div class="alert alert--error alert--transparent">
+								'.$sendEmail.'
+								<span class="alert__close">
+									<svg class="icon">
+										<use xlink:href="#close"></use>
+									</svg>
+								</span>
+							</div>
 
 						<script>
 
@@ -83,10 +98,12 @@ class UsersController{
 			}else{
 
 				echo '<div class="alert alert--error alert--transparent">
-						Error en la sintaxis de los campos.<span class="alert__close">
+						Error en la sintaxis de los campos.
+						<span class="alert__close">
 							<svg class="icon">
 								<use xlink:href="#close"></use>
-							</svg></span>
+							</svg>
+						</span>
 					</div>
 
 				<script>
@@ -145,32 +162,49 @@ class UsersController{
 					}else{
 
 						echo '<div class="alert alert--error alert--transparent">
-								Tu cuenta aun no ha sido verificada, revisa tu correo electrónico.<span class="alert__close">
+								Tu cuenta aun no ha sido verificada, revisa tu correo electrónico.
+								<span class="alert__close">
 									<svg class="icon">
 										<use xlink:href="#close"></use>
-									</svg></span>
-							</div>';
+									</svg>
+								</span>
+							</div> 
+
+							<script>
+
+								fncFormatInputs()
+
+							</script>';
 
 					}
 
 				}else{
 
 					echo '<div class="alert alert--error alert--transparent">
-							'.$login->results.'<span class="alert__close">
+							'.$login->results.'
+							<span class="alert__close">
 								<svg class="icon">
 									<use xlink:href="#close"></use>
-								</svg></span>
-						</div>';
+								</svg>
+							</span>
+						</div> 
+						<script>
+
+							fncFormatInputs()
+
+						</script>';
 
 				}
 
 			}else{
 
 				echo '<div class="alert alert--error alert--transparent">
-						Error en la sintaxis de los campos.<span class="alert__close">
+						Error en la sintaxis de los campos.
+						<span class="alert__close">
 							<svg class="icon">
 								<use xlink:href="#close"></use>
-							</svg></span>
+							</svg>
+						</span>
 					</div>
 
 				<script>
