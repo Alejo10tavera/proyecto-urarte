@@ -171,7 +171,7 @@ class PostController{
 
 				$response = null;
 				$return = new PostController();
-				$return -> fncResponse($response, "postLogin",  "Wrong password");
+				$return -> fncResponse($response, "postLogin",  "Contraseña incorrecta");
 
 			}
 
@@ -179,7 +179,7 @@ class PostController{
 
 			$response = null;
 			$return = new PostController();
-			$return -> fncResponse($response, "postLogin",  "Wrong email");
+			$return -> fncResponse($response, "postLogin",  "Email incorrecto");
 
 		}
 

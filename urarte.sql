@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-06-2022 a las 20:33:15
+-- Tiempo de generación: 22-06-2022 a las 06:07:14
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -873,11 +873,12 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `rol_user`, `picture_user`, `displayname_user`, `username_user`, `password_user`, `email_user`, `token_user`, `token_exp_user`, `method_user`, `verification_user`, `status_user`, `bdelete_user`, `date_add_user`, `date_modify_user`) VALUES
 (1, 'default', '', 'Gilbert Maxiliun', 'maximiluin', '', 'maximiluin@gmail.com', '', '', 'direct', 1, 1, 0, '2022-05-05 04:21:04', '2022-05-05 04:21:36'),
-(5, 'default', NULL, 'Alejandro Tavera', 'Alejo', '$2a$07$azybxcags23425sdg23sdeekOQFHK/jVkZZZ5LZAAHZFT/hjtleHa', 'alejandro@urarte.com', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU0ODg4NDEsImV4cCI6MTY1NTU3NTI0MSwiZGF0YSI6eyJpZCI6NSwiZW1haWwiOiJhbGVqYW5kcm9AdXJhcnRlLmNvbSJ9fQ.KE5CozyArUkCPMkgePa3dzlMlHTunNUmGCd9NHtgqNk', '1655575241', 'direct', 1, 1, 0, '2022-05-07 04:43:49', '2022-06-17 18:00:41'),
-(7, 'default', NULL, 'Jose Luis', 'jose', '$2a$07$azybxcags23425sdg23sdee5J5oPo6KabPYFUxE/fHC4DE270YSzK', 'jose@urarte.com', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU0ODkwNDUsImV4cCI6MTY1NTU3NTQ0NSwiZGF0YSI6eyJpZCI6NywiZW1haWwiOiJqb3NlQHVyYXJ0ZS5jb20ifX0.GZiXfoycWZRmORIVEVTVTTo7ZWN1x8Mcz5_hxggGKLc', '1655575445', 'direct', 0, 1, 0, '2022-06-17 18:01:39', '2022-06-17 18:04:05'),
-(8, 'default', NULL, 'Alejandro Tavera', 'alejandro', '$2a$07$azybxcags23425sdg23sdeekOQFHK/jVkZZZ5LZAAHZFT/hjtleHa', 'alejandro@correo.com', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU0OTAyOTYsImV4cCI6MTY1NTU3NjY5NiwiZGF0YSI6eyJpZCI6OCwiZW1haWwiOiJhbGVqYW5kcm9AY29ycmVvLmNvbSJ9fQ.mgNTb7DydFxGEAnSNVPquJdD73sZohtSPw-x-1XKmrs', '1655576696', 'direct', 1, 1, 0, '2022-06-17 18:13:31', '2022-06-17 18:24:56'),
+(5, 'default', NULL, 'Alejandro Tavera', 'Alejo', '$2a$07$azybxcags23425sdg23sdeekOQFHK/jVkZZZ5LZAAHZFT/hjtleHa', 'alejandro@urarte.com', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU4NzA3NjEsImV4cCI6MTY1NTk1NzE2MSwiZGF0YSI6eyJpZCI6NSwiZW1haWwiOiJhbGVqYW5kcm9AdXJhcnRlLmNvbSJ9fQ.0f85B038lX0W2F0N0c5RBTovTvXXO-UTNVEE8kfBCFM', '1655957161', 'direct', 1, 1, 0, '2022-05-07 04:43:49', '2022-06-22 04:06:01'),
+(7, 'default', NULL, 'Jose Luis', 'jose', '$2a$07$azybxcags23425sdg23sdee5J5oPo6KabPYFUxE/fHC4DE270YSzK', 'jose@urarte.com', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU4Njc3MzYsImV4cCI6MTY1NTk1NDEzNiwiZGF0YSI6eyJpZCI6NywiZW1haWwiOiJqb3NlQHVyYXJ0ZS5jb20ifX0.KcQhRyUuy9AxzfrMnh8jPxR1MH8ySfqUxTdci6ImlDQ', '1655954136', 'direct', 0, 1, 0, '2022-06-17 18:01:39', '2022-06-22 03:15:36'),
+(8, 'default', NULL, 'Alejandro Tavera', 'alejandro', '$2a$07$azybxcags23425sdg23sdeekOQFHK/jVkZZZ5LZAAHZFT/hjtleHa', 'alejandro@correo.com', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU3MDAwMzQsImV4cCI6MTY1NTc4NjQzNCwiZGF0YSI6eyJpZCI6OCwiZW1haWwiOiJhbGVqYW5kcm9AY29ycmVvLmNvbSJ9fQ.j-n3uGrIMUhkCN7S0gM_LanM5XSBECWDNYAGi-0EIr4', '1655786434', 'direct', 1, 1, 0, '2022-06-17 18:13:31', '2022-06-20 04:40:34'),
 (9, 'default', NULL, 'Camilo Cartagena', 'camilo', '$2a$07$azybxcags23425sdg23sde3cbBloDmkYzOqKE9Pil08CebSkE0ilK', 'camilo@urarte.com', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU0OTU2ODIsImV4cCI6MTY1NTU4MjA4MiwiZGF0YSI6eyJpZCI6OSwiZW1haWwiOiJjYW1pbG9AdXJhcnRlLmNvbSJ9fQ.sfN86Pa5UQ-R-i5NW0abnPz2BF1ZssV5PFYS77NurZw', '1655582082', 'direct', 0, 1, 0, '2022-06-17 19:36:46', '2022-06-17 19:54:42'),
-(13, 'default', NULL, 'Jhon Usuga', 'jhon', '$2a$07$azybxcags23425sdg23sdeKjRIuG0Jt1.wLZXEWPhKkLY9V.bWW1q', 'jhon@urarte.com', NULL, NULL, 'direct', 0, 1, 0, '2022-06-18 13:21:28', '2022-06-18 13:21:28');
+(13, 'default', NULL, 'Jhon Usuga', 'jhon', '$2a$07$azybxcags23425sdg23sdeKjRIuG0Jt1.wLZXEWPhKkLY9V.bWW1q', 'jhon@urarte.com', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU4NzAwNjAsImV4cCI6MTY1NTk1NjQ2MCwiZGF0YSI6eyJpZCI6MTMsImVtYWlsIjoiamhvbkB1cmFydGUuY29tIn19.JZVdD_BoSxoMJA140fwX0DKNFHpY5NzIQWf6vTcxoIY', '1655956460', 'direct', 1, 1, 0, '2022-06-18 13:21:28', '2022-06-22 03:54:20'),
+(22, 'default', NULL, 'Ana Tavera', 'ana', '$2a$07$azybxcags23425sdg23sdeluvnbKLByaiiCM19qTD2ao2ZCbVgkxO', 'ana@urarte.com', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU4Njk2MTYsImV4cCI6MTY1NTk1NjAxNiwiZGF0YSI6eyJpZCI6MjIsImVtYWlsIjoiYW5hQHVyYXJ0ZS5jb20ifX0.EBWK2uXOjZQJYgyPr1DT8K9RxbmtzHO4meneCIyko3k', '1655956016', 'direct', 1, 1, 0, '2022-06-22 03:35:21', '2022-06-22 03:46:56');
 
 --
 -- Índices para tablas volcadas
@@ -1101,7 +1102,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

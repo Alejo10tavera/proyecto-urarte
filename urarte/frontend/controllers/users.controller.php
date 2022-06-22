@@ -58,38 +58,24 @@ class UsersController{
 
 					if($sendEmail == "ok"){
 
-						echo '<div class="alert alert--success alert--transparent">
-								Usuario registrado con éxito, confirme su cuenta en su correo electrónico (revisar spam)
-								<span class="alert__close">
-									<svg class="icon">
-										<use xlink:href="#close"></use>
-									</svg>
-								</span>
-							</div>
-						
 
-						<script>
+						echo '<script>
 
 							fncFormatInputs()
+
+							fncSweetAlert("success", "Usuario registrado con éxito, confirme su cuenta en su correo electrónico (revisar spam)", "'.TemplateController::path().'account&login")
 
 						</script>';
 
 					}else{
 
-						echo '<div class="alert alert--error alert--transparent">
-								'.$sendEmail.'
-								<span class="alert__close">
-									<svg class="icon">
-										<use xlink:href="#close"></use>
-									</svg>
-								</span>
-							</div>
-
-						<script>
+						echo '<script>
 
 							fncFormatInputs()
 
-						</script>';	
+							fncSweetAlert("error", "'.$sendEmail.'", "")
+
+						</script>';
 
 					}
 
@@ -97,20 +83,13 @@ class UsersController{
 
 			}else{
 
-				echo '<div class="alert alert--error alert--transparent">
-						Error en la sintaxis de los campos.
-						<span class="alert__close">
-							<svg class="icon">
-								<use xlink:href="#close"></use>
-							</svg>
-						</span>
-					</div>
+					echo '<script>
 
-				<script>
+						fncFormatInputs()
 
-					fncFormatInputs()
+						fncSweetAlert("error", "Error en la sintaxis de los campos.", "")
 
-				</script>';
+					</script>';
 
 			}
 
@@ -133,8 +112,13 @@ class UsersController{
 			=============================================*/	
 
 			if(preg_match('/^[^0-9][.a-zA-Z0-9_]+([.][.a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["loginEmail"]) &&
-			   preg_match('/^[#\\=\\$\\;\\*\\_\\?\\¿\\!\\¡\\:\\.\\,\\0-9a-zA-Z]{1,}$/', $_POST["loginPassword"])
-			){
+			   preg_match('/^[#\\=\\$\\;\\*\\_\\?\\¿\\!\\¡\\:\\.\\,\\0-9a-zA-Z]{1,}$/', $_POST["loginPassword"])){
+
+			   	echo '<script>
+
+					fncSweetAlert("loading", "", "");
+
+				</script>';
 
 				$url = CurlController::api()."users?login=true";
 				$method = "POST";
@@ -157,20 +141,22 @@ class UsersController{
 
 					if($login->results[0]->verification_user == 1){
 
-						echo '<div class="alert alert-info">verified.</div>';
+						$_SESSION["user"] = $login->results[0];
+
+						echo '<script>
+
+								fncFormatInputs();
+
+								window.location = "'.TemplateController::path().'account&profile";
+
+							</script>
+						';
 
 					}else{
 
-						echo '<div class="alert alert--error alert--transparent">
-								Tu cuenta aun no ha sido verificada, revisa tu correo electrónico.
-								<span class="alert__close">
-									<svg class="icon">
-										<use xlink:href="#close"></use>
-									</svg>
-								</span>
-							</div> 
+						echo '<script>
 
-							<script>
+								fncSweetAlert("error", "Tu cuenta aun no ha sido verificada, revisa tu correo electrónico.", "")
 
 								fncFormatInputs()
 
@@ -180,17 +166,11 @@ class UsersController{
 
 				}else{
 
-					echo '<div class="alert alert--error alert--transparent">
-							'.$login->results.'
-							<span class="alert__close">
-								<svg class="icon">
-									<use xlink:href="#close"></use>
-								</svg>
-							</span>
-						</div> 
-						<script>
+					echo '<script>
 
 							fncFormatInputs()
+
+							fncSweetAlert("error", "'.$login->results.'", "")
 
 						</script>';
 
@@ -198,18 +178,11 @@ class UsersController{
 
 			}else{
 
-				echo '<div class="alert alert--error alert--transparent">
-						Error en la sintaxis de los campos.
-						<span class="alert__close">
-							<svg class="icon">
-								<use xlink:href="#close"></use>
-							</svg>
-						</span>
-					</div>
-
-				<script>
+				echo '<script>
 
 					fncFormatInputs()
+
+					fncSweetAlert("error", "Error en la sintaxis de los campos.", "")
 
 				</script>';
 
@@ -222,5 +195,248 @@ class UsersController{
 	
 	/*=====  End of Login de usuarios  ======*/
 	
+	/*============================================
+	=            Recuperar contraseña            =
+	============================================*/
+	
+	public function resetPassword(){
 
+		if(isset($_POST["resetPassword"])){
+
+			/*=============================================
+			Validamos la sintaxis de los campos
+			=============================================*/	
+
+			if(preg_match('/^[^0-9][.a-zA-Z0-9_]+([.][.a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["resetPassword"])){
+
+				/*=============================================
+				Preguntamos primero si el usuario está registrado
+				=============================================*/	
+				$url = CurlController::api()."users?linkTo=email_user&equalTo=".$_POST["resetPassword"]."&linkTo_=status_user&equalTo_=1&select=*";
+				$method = "GET";
+				$fields = array();
+				$header = array();
+
+				$user = CurlController::request($url, $method, $fields, $header);
+
+				if($user->status == 200){
+
+					if($user->results[0]->method_user == "direct"){
+
+						function genPassword($length){
+
+							$password = "";
+							$chain = "123456789abcdefghijklmnopqrstuvwxyz";
+
+							$max = strlen($chain)-1;
+
+							for($i = 0; $i < $length; $i++){
+
+								$password .= $chain[mt_rand(0,$max)];
+
+							}
+
+							return $password;
+
+						}
+
+						$newPassword = genPassword(11);
+						
+						$crypt = crypt($newPassword, '$2a$07$azybxcags23425sdg23sdfhsd$');
+
+						/*=============================================
+						Actualizar contraseña en base de datos
+						=============================================*/
+
+						$url = CurlController::api()."users?id=".$user->results[0]->id_user."&nameId=id_user&linkTo_=status_user&equalTo_=1&token=no&except=password_user";
+						$method = "PUT";
+						$fields =  "password_user=".$crypt;
+						$header = array();
+
+						$updatePassword = CurlController::request($url, $method, $fields, $header);		
+
+						if($updatePassword->status == 200){	
+
+							/*=============================================
+							Enviamos nueva contraseña al correo electrónico
+							=============================================*/							
+						
+							$name = $user->results[0]->displayname_user;
+							$subject = "Request new password";
+							$email = $user->results[0]->email_user;
+							$message = "Your new password is ".$newPassword;
+							$url = TemplateController::path()."account&login";
+
+							$sendEmail = TemplateController::sendEmail($name, $subject, $email, $message, $url);
+
+							if($sendEmail == "ok"){
+
+								echo '<script>
+
+										fncFormatInputs();
+
+										fncSweetAlert("success", "Su nueva contraseña ha sido enviada con éxito, por favor revise su bandeja de entrada de correo electrónico.", "");
+
+									</script>';
+
+							}else{
+
+								echo '<script>
+
+										fncFormatInputs();
+
+										fncSweetAlert("error", "'.$sendEmail.'", "")
+
+									</script>';
+
+							}
+
+						}
+
+					}
+
+				}else{
+
+					echo '<script>
+
+							fncFormatInputs();
+
+							fncSweetAlert("error", "Correo no encontrado en la base de datos.", "")
+
+						</script>';
+				}
+
+			}else{
+
+				echo '<script>
+
+						fncFormatInputs();
+
+						fncSweetAlert("error", "Error en la sintaxis de los campos.", "")
+
+					</script>';
+
+			}
+
+		}
+
+	}
+	
+	/*=====  End of Recuperar contraseña  ======*/
+
+	/*==========================================
+	=            Cambiar contraseña            =
+	==========================================*/
+	
+	public function changePassword(){
+
+		if(isset($_POST["changePassword"])){
+
+			/*=============================================
+			Validamos la sintaxis de los campos
+			=============================================*/	
+
+		  	if(preg_match('/^[#\\=\\$\\;\\*\\_\\?\\¿\\!\\¡\\:\\.\\,\\0-9a-zA-Z]{1,}$/', $_POST["changePassword"])){
+
+		  		/*=============================================
+				Encriptamos la contraseña
+				=============================================*/
+				
+				$crypt = crypt($_POST["changePassword"], '$2a$07$azybxcags23425sdg23sdfhsd$');
+
+				/*=============================================
+				Actualizar contraseña en base de datos
+				=============================================*/	
+
+				$url = CurlController::api()."users?id=".$_SESSION["user"]->id_user."&nameId=id_user&linkTo_=status_user&equalTo_=1&token=".$_SESSION["user"]->token_user;
+				$method = "PUT";
+				$fields =  "password_user=".$crypt;
+				$header = array();					
+
+				$updatePassword = CurlController::request($url, $method, $fields, $header);
+				
+				if($updatePassword->status == 200){	
+
+					/*=============================================
+					Enviamos correo informando cambio de contraseña
+					=============================================*/							
+				
+					$name = $_SESSION["user"]->displayname_user;
+					$subject = "Change of password";
+					$email = $_SESSION["user"]->email_user;
+					$message = "You have changed your password";
+					$url = TemplateController::path()."account&login";
+
+					$sendEmail = TemplateController::sendEmail($name, $subject, $email, $message, $url);
+
+					if($sendEmail == "ok"){
+
+						echo '<script>
+
+								fncFormatInputs();
+
+								fncSweetAlert("success", "Su contraseña se ha cambiado exitosamente.", "")
+
+							</script>
+						';
+
+					}else{
+
+						echo '<script>
+
+								fncFormatInputs();
+
+								fncSweetAlert("error", "'.$sendEmail.'", "")
+
+							</script>
+						';
+
+					}
+
+				}else{
+
+					if($updatePassword->status == 303){	
+
+						echo '<script>
+
+							fncFormatInputs();
+
+							fncSweetAlert("error", "'.$updatePassword->results.'", "'.TemplateController::path().'account&logout");
+
+						</script>';		
+
+
+					}else{
+
+						echo '<script>
+
+								fncFormatInputs();
+
+								fncSweetAlert("error", "La contraseña no se actualizó, intente nuevamente", "");
+
+							</script>';
+
+					}
+
+				}
+
+		  	}else{
+
+				echo '<script>
+
+					fncFormatInputs();
+
+						fncSweetAlert("error", "Error en la sintaxis de los campos.", "")
+
+				</script>';	
+
+			}
+
+		}
+
+	}
+	
+	/*=====  End of Cambiar contraseña  ======*/
+
+	
 }

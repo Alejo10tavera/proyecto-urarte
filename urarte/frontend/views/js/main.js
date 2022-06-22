@@ -54,6 +54,25 @@
     }
 
     /*=============================================
+    Capturar email login 
+    =============================================*/
+    function rememberLogin(){
+
+        if(localStorage.getItem("emailRem") != null){
+
+            $('[name="loginEmail"]').val(localStorage.getItem("emailRem"));
+
+        }
+
+        if(localStorage.getItem("checkRem") != null && localStorage.getItem("checkRem")){
+
+            $('#remember-me').attr("checked", true);
+            
+        }
+
+    }
+
+    /*=============================================
     Ejecutar funciones globales
     =============================================*/
 
@@ -61,6 +80,7 @@
 
     	preload();
         validateBS4();
+        rememberLogin();
 
     });
 
@@ -171,5 +191,79 @@ function validateJS(event, type){
 
     }
 
+    /*=============================================
+    Validamos imagen
+    =============================================*/
+
+    if(type == "image"){
+
+        var image = event.target.files[0];
+
+        /*=============================================
+        Validamos el formato
+        =============================================*/
+
+        if(image["type"] !== "image/jpeg" && image["type"] !== "image/png"){
+
+            fncSweetAlert("error", "The image must be in JPG or PNG format", null)
+
+            return;
+            
+        }
+
+        /*=============================================
+        Validamos el tamaño
+        =============================================*/
+
+        else if(image["size"] > 2000000){
+
+            fncSweetAlert("error", "Image must not weigh more than 2MB", null)
+
+            return;
+
+        }
+
+        /*=============================================
+        Mostramos la imagen temporal
+        =============================================*/
+
+        else{
+
+            var data = new FileReader();
+            data.readAsDataURL(image);
+
+            $(data).on("load", function(event){
+
+                var path = event.target.result; 
+
+                $(".changePicture").attr("src", path);    
+
+            })
+
+        }
+
+    }
+
 }
+
+/*=============================================
+Función para recordar email en el login
+=============================================*/
+
+function remember(event){
+
+    if(event.target.checked){
+
+        localStorage.setItem("emailRem", $('[name="loginEmail"]').val());
+        localStorage.setItem("checkRem", true);
+
+    }else{
+
+        localStorage.removeItem("emailRem");
+        localStorage.removeItem("checkRem");
+
+    }
+
+}
+
 

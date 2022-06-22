@@ -47,10 +47,32 @@
 			</div>
 
 			<div class="col-auto d-flex align-items-center">
-				<!-- lang select start-->
-				<ul class="lang-select">
-					<li class="main-menu__item"><a class="main-menu__link" href="<?php echo $path ?>account&login"><span>Mi cuenta</span></a></li>
-				</ul>
+
+				<?php if (isset($_SESSION["user"])): ?>
+
+					<!-- lang select start-->
+					<ul class="lang-select lang-select--inner">
+						<li class="lang-select__item lang-select__item--active"><span><?php echo TemplateController::capitalize(strtolower("Mi cuenta")) ?></span>
+							<ul class="lang-select__sub-list">
+								<li><a href="<?php echo $path ?>account&profile">Perfil</a></li>
+								<li><a href="<?php echo $path ?>account&logout">Salir</a></li>
+							</ul>
+						</li>
+					</ul>
+
+				<?php else: ?>
+
+					<!-- lang select start-->
+					<ul class="lang-select lang-select--inner">
+						<li class="lang-select__item lang-select__item--active"><span><i class="fa fa-users"></i></span>
+							<ul class="lang-select__sub-list">
+								<li><a href="<?php echo $path ?>account&login">Acceso</a></li>
+								<li><a href="<?php echo $path ?>account&enrollment">Registro</a></li>
+							</ul>
+						</li>
+					</ul>
+
+				<?php endif ?>
 				
 				<a class="button button--squared" href="<?php echo $path ?>donate"><span>Donar</span></a>
 

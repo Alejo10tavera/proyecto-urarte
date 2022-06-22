@@ -657,7 +657,7 @@ if(count($routesArray) == 0){
 								}else{
 
 									$json = array(
-									 	'status' => 400,
+									 	'status' => 303,
 									 	'results' => "Error: The token has expired"
 									);
 
@@ -695,13 +695,6 @@ if(count($routesArray) == 0){
 						return;	
 
 					}	
-
-					/*=============================================
-					Solicitamos respuesta del controlador para editar cualquier tabla
-					=============================================*/
-
-					$response = new PutController();
-					$response -> putData(explode("?", $routesArray[1])[0], $data, $_GET["id"], $_GET["nameId"]);
 
 				}else{
 

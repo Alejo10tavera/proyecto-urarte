@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 /*=============================================
 Traer el dominio principal
 =============================================*/
@@ -177,6 +179,10 @@ if(!empty($urlParams[0])){
 
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+	    <!-- Sweet Alert -->
+	    <!-- https://sweetalert2.github.io/ -->
+	    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 		<script src="<?php echo $path ?>views/js/head.js"></script>
 
