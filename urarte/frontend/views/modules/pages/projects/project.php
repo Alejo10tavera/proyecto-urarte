@@ -109,6 +109,7 @@ $infoDataProject = CurlController::request($url, $method, $fields, $header)->res
                             <li><a href="#horizontal-tabs__item-4"><span>Integrantes</span></a></li>
                             <li><a href="#horizontal-tabs__item-5"><span>Galeria</span></a></li>
                             <li><a href="#horizontal-tabs__item-6"><span>Donar</span></a></li>
+                            <li><a href="#horizontal-tabs__item-7"><span>Contactar</span></a></li>
                         </ul>
                         <div class="horizontal-tabs__content">                           
 
@@ -390,6 +391,35 @@ $infoDataProject = CurlController::request($url, $method, $fields, $header)->res
                                     </div>
                                 </div>
                                 
+                            </div>
+
+                            <div class="horizontal-tabs__item" id="horizontal-tabs__item-7">
+
+                                <form class="form message-form" action="javascript:void(0);">
+                                    <h6 class="form__title">Enviar un mensaje</h6><span class="form__text">* Elementos requeridos</span>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <input class="form__field" type="text" name="first-name" placeholder="Nombres *" required="required"/>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input class="form__field" type="text" name="last-name" placeholder="Apellidos *" required="required"/>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input class="form__field" type="email" name="email" placeholder="Email *" required="required"/>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input class="form__field" type="tel" name="phone-number" placeholder="Teléfono *" required="required"/>
+                                        </div>
+                                        <div class="col-12">
+                                            <textarea class="form__message form__field" name="message" placeholder="Mensaje *" required="required"></textarea>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="form__submit" type="submit">Enviar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                
+
                             </div>
 
                         </div>

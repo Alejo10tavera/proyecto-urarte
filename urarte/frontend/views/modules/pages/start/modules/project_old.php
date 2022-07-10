@@ -3,8 +3,8 @@
 /*=============================================
 Traer los proyectos recien agregados
 =============================================*/
-$select = "logo_project,name_project,route_project,headline_project,social_project,city_project,email_project,phone_project,id_category,name_category,color_category";
-$url = CurlController::api()."relations?rel=projects,categories&type=project,category&linkTo=status_project&equalTo=1&linkTo_=bdelete_project&equalTo_=0&orderBy=id_project&orderMode=ASC&startAt=0&endAt=3&select=".$select;
+$select = "logo_project,name_project,route_project,headline_project,social_project,city_project,email_project,phone_project,status_project,id_category,name_category,color_category";
+$url = CurlController::api()."relations?rel=projects,categories&type=project,category&linkTo=process_project&equalTo=2&linkTo_=bdelete_project&equalTo_=0&orderBy=id_project&orderMode=ASC&startAt=0&endAt=3&select=".$select;
 $method = "GET";
 $fields = array();
 $header = array();
@@ -104,8 +104,10 @@ $projectsOld = CurlController::request($url, $method, $fields, $header)->results
 				<?php 
 
 					foreach ($projectsOld as $key => $value) {
+
+						if($value->status_project != 0){
 						
-						echo '<div class="col-md-6 col-lg-4">
+							echo '<div class="col-md-6 col-lg-4">
 								<div class="event-item">
 									<div class="event-item__img"><img class="img--bg" src="'.$backoffice.'views/img/projects/'.$value->id_category.'/logo/'.$value->logo_project.'" alt="'.$value->name_project.'"/></div>
 
@@ -131,6 +133,8 @@ $projectsOld = CurlController::request($url, $method, $fields, $header)->results
 									</div>
 								</div>
 							</div>';
+
+						}
 
 					}
 

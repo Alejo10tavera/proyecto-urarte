@@ -166,13 +166,22 @@ if(!empty($urlParams[0])){
 		<link rel="stylesheet" href="<?php echo $path ?>views/css/styles.min.css"/>
 		<link rel="stylesheet" href="<?php echo $path ?>views/css/styles_.css"/>
 
+		<!-- DataTable -->
+	    <link rel="stylesheet" href="<?php echo $path ?>views/css/dataTables.bootstrap4.min.css">
+	    <link rel="stylesheet" href="<?php echo $path ?>views/css/responsive.bootstrap.datatable.min.css">
+
 		<!-- Placeholder-loading -->
 	    <!-- https://github.com/zalog/placeholder-loading -->
 	    <!-- https://www.youtube.com/watch?v=JU_sklV_diY -->
 	    <link rel="stylesheet" href="https://unpkg.com/placeholder-loading@0.2.6/dist/css/placeholder-loading.min.css">
 
 		<!-- jQuery library -->
-		<script src="<?php echo $path ?>js/jquery-1.12.4.min.js"></script>
+		<script src="<?php echo $path ?>views/js/jquery-1.12.4.min.js"></script>
+
+		<!-- DataTable -->
+	    <script src="<?php echo $path ?>views/js/jquery.dataTables.min.js"></script>
+	    <script src="<?php echo $path ?>views/js/dataTables.bootstrap4.min.js"></script>
+	    <script src="<?php echo $path ?>views/js/dataTables.responsive.min.js"></script>
 
 		<!-- Popper JS -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -183,6 +192,8 @@ if(!empty($urlParams[0])){
 	    <!-- Sweet Alert -->
 	    <!-- https://sweetalert2.github.io/ -->
 	    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
 
 		<script src="<?php echo $path ?>views/js/head.js"></script>
 

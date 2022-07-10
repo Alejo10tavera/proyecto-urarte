@@ -3,8 +3,8 @@
 /*=============================================
 Traer los proyectos recien agregados
 =============================================*/
-$select = "logo_project,name_project,route_project,headline_project,social_project,id_category,name_category,color_category";
-$url = CurlController::api()."relations?rel=projects,categories&type=project,category&linkTo=status_project&equalTo=1&linkTo_=bdelete_project&equalTo_=0&orderBy=id_project&orderMode=DESC&startAt=0&endAt=5&select=".$select;
+$select = "logo_project,name_project,route_project,headline_project,social_project,status_project,id_category,name_category,color_category";
+$url = CurlController::api()."relations?rel=projects,categories&type=project,category&linkTo=process_project&equalTo=2&linkTo_=bdelete_project&equalTo_=0&orderBy=id_project&orderMode=DESC&startAt=0&endAt=5&select=".$select;
 $method = "GET";
 $fields = array();
 $header = array();
@@ -70,7 +70,9 @@ $projectsRecent = CurlController::request($url, $method, $fields, $header)->resu
 
 								foreach ($projectsRecent as $key => $value) {
 
-									echo '<div class="items-slider__item">
+									if($value->status_project != 0){
+
+										echo '<div class="items-slider__item">
 											<div class="causes-item causes-item--style-3 causes-item--slider no-padding">
 												<div class="causes-item__body">
 													<div class="row align-items-center">
@@ -125,6 +127,8 @@ $projectsRecent = CurlController::request($url, $method, $fields, $header)->resu
 											</div>
 										</div>';
 									
+									}
+										
 								}
 
 							?>

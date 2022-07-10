@@ -172,50 +172,56 @@ $pageEvents = CurlController::request($url, $method, $fields, $header)->results;
                         foreach ($dataEvents as $key => $value) {
 
                             $hoy = date('Y-m-d');                       
-
+                            
                             $details = json_decode($value->details_event,true); 
 
                             $originalDate = $details[0]["start"];                        
                             $timestamp = strtotime($originalDate); 
-                            $newDate = date("Y-m-d", $timestamp );
+                            $newDate = date("Y-m-d", $timestamp);
                                                     
                             $date1 = new DateTime($hoy);
                             $date2 = new DateTime($newDate);
-                            $diff = $date1->diff($date2);                        
+                            $diff = $date1->diff($date2);    
+
+                            $finishDate = $details[1]["finish"];                        
                             
-                            $venue = json_decode($value->venue_event,true);                         
-                            
-                            echo '<div class="col-xl-10 offset-xl-1">
-                                    <div class="upcoming-item">
-                                        <div class="upcoming-item__date"> Faltan <span> '.$diff->days.'</span><span> días</span></div>
-                                        <div class="upcoming-item__body">
-                                            <div class="row align-items-center">
-                                                <div class="col-lg-5 col-xl-4">
-                                                    <div class="upcoming-item__img"><img class="img--bg" src="'.$backoffice.'views/img/events/post/'.$value->image_event.'" alt="img"/></div>
-                                                </div>
-                                                <div class="col-lg-7 col-xl-8">
-                                                    <div class="upcoming-item__description">
-                                                        <h6 class="upcoming-item__title"><a href="'.$path.$value->route_event.'">'.TemplateController::capitalize(strtolower($value->name_event)).'</a></h6>
-                                                        <p>'.$value->headline_event.'</p>
-                                                        <div class="upcoming-item__details">
-                                                            <p>
-                                                                <svg class="icon">
-                                                                    <use xlink:href="#clock"></use>
-                                                                </svg> <strong>'.$details[0]["start"].',</strong> '.$details[0]["time"].' - <strong>'.$details[1]["finish"].',</strong> '.$details[1]["time"].'
-                                                            </p>
-                                                            <p>
-                                                                <svg class="icon">
-                                                                    <use xlink:href="#placeholder"></use>
-                                                                </svg> <strong>'.$venue[1]["city"].',</strong> '.$venue[0]["address"].'
-                                                            </p>
+                            if($hoy < $finishDate){
+                                
+                                $venue = json_decode($value->venue_event,true);                         
+                                
+                                echo '<div class="col-xl-10 offset-xl-1">
+                                        <div class="upcoming-item">
+                                            <div class="upcoming-item__date"> Faltan <span> '.$diff->days.'</span><span> días</span></div>
+                                            <div class="upcoming-item__body">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-5 col-xl-4">
+                                                        <div class="upcoming-item__img"><img class="img--bg" src="'.$backoffice.'views/img/events/post/'.$value->image_event.'" alt="img"/></div>
+                                                    </div>
+                                                    <div class="col-lg-7 col-xl-8">
+                                                        <div class="upcoming-item__description">
+                                                            <h6 class="upcoming-item__title"><a href="'.$path.$value->route_event.'">'.TemplateController::capitalize(strtolower($value->name_event)).'</a></h6>
+                                                            <p>'.$value->headline_event.'</p>
+                                                            <div class="upcoming-item__details">
+                                                                <p>
+                                                                    <svg class="icon">
+                                                                        <use xlink:href="#clock"></use>
+                                                                    </svg> <strong>'.$details[0]["start"].',</strong> '.$details[0]["time"].' - <strong>'.$details[1]["finish"].',</strong> '.$details[1]["time"].'
+                                                                </p>
+                                                                <p>
+                                                                    <svg class="icon">
+                                                                        <use xlink:href="#placeholder"></use>
+                                                                    </svg> <strong>'.$venue[1]["city"].',</strong> '.$venue[0]["address"].'
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>';
-                            
+                                    </div>';
+
+                            }
+
                         }
 
                     ?>

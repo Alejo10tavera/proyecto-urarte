@@ -191,7 +191,6 @@ class UsersController{
 		}
 
 	}
-
 	
 	/*=====  End of Login de usuarios  ======*/
 	
@@ -377,8 +376,7 @@ class UsersController{
 
 								fncSweetAlert("success", "Su contraseña se ha cambiado exitosamente.", "")
 
-							</script>
-						';
+							</script>';
 
 					}else{
 
@@ -388,8 +386,7 @@ class UsersController{
 
 								fncSweetAlert("error", "'.$sendEmail.'", "")
 
-							</script>
-						';
+							</script>';
 
 					}
 
@@ -438,5 +435,4 @@ class UsersController{
 	
 	/*=====  End of Cambiar contraseña  ======*/
 
-	
 }

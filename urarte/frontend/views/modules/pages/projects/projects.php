@@ -218,12 +218,12 @@
                     if($routesArray[1] == "projects"){
 
                         $select = "*";
-                        $url = CurlController::api()."relations?rel=projects,categories&type=project,category&linkTo=status_project&equalTo=1&linkTo_=bdelete_project&equalTo_=0&orderBy=id_project&orderMode=".$orderMode."&startAt=".$startAt."&endAt=".$endAt."&select=".$select;
+                        $url = CurlController::api()."relations?rel=projects,categories&type=project,category&linkTo=status_project&equalTo=1&linkTo_=process_project&equalTo_=2&orderBy=id_project&orderMode=".$orderMode."&startAt=".$startAt."&endAt=".$endAt."&select=".$select;
                         
                     }else{
 
                         $select = "*";
-                        $url = CurlController::api()."relations?rel=projects,categories&type=project,category&linkTo=route_category&equalTo=".$routesArray[1]."&linkTo_=status_project&equalTo_=1&orderBy=id_project&orderMode=".$orderMode."&startAt=".$startAt."&endAt=".$endAt."&select=".$select;
+                        $url = CurlController::api()."relations?rel=projects,categories&type=project,category&linkTo=route_category&equalTo=".$routesArray[1]."&linkTo_=process_project&equalTo_=2&orderBy=id_project&orderMode=".$orderMode."&startAt=".$startAt."&endAt=".$endAt."&select=".$select;
 
                     }
                     
@@ -231,7 +231,6 @@
                     $fields = array();
                     $header = array();
                     $dataProjects = CurlController::request($url, $method, $fields, $header)->results;
-                                     
                                             
                     if($dataProjects == "Not Found"){
 
@@ -267,39 +266,44 @@
 
                         foreach ($dataProjects as $key => $value) {
 
-                            echo '<div class="col-md-6 col-lg-4">
-                                <div class="causes-item causes-item--primary">
-                                    <div class="causes-item__body">
-                                        <div class="causes-item__top">
-                                            <h6 class="causes-item__title"> <a href="'.$path.$value->route_project.'">'.TemplateController::capitalize(strtolower($value->name_project)).'</a></h6>
-                                            <p>'.$value->headline_project.'</p>
-                                        </div>
-                                        <div class="causes-item__img">
-                                            <div class="causes-item__badge" style="background-color: '.$value->color_category.'">'.TemplateController::capitalize(strtolower($value->name_category)).'</div><img class="img--bg" src="'.$backoffice.'views/img/projects/'.$value->id_category.'/logo/'.$value->logo_project.'" alt="'.$value->name_project.'"/>
-                                        </div>
-                                        <div class="causes-item__lower">
-                                            <div class="causes-item__details-holder">
-                                                <ul class="aside-socials">';
 
-                                                    foreach ($dataProjectsSocial as $key => $value_) {
+                            if ($value->status_project != 0) {
 
-                                                        if($value_['status'] != 0){
+                                echo '<div class="col-md-6 col-lg-4">
+                                    <div class="causes-item causes-item--primary">
+                                        <div class="causes-item__body">
+                                            <div class="causes-item__top">
+                                                <h6 class="causes-item__title"> <a href="'.$path.$value->route_project.'">'.TemplateController::capitalize(strtolower($value->name_project)).'</a></h6>
+                                                <p>'.$value->headline_project.'</p>
+                                            </div>
+                                            <div class="causes-item__img">
+                                                <div class="causes-item__badge" style="background-color: '.$value->color_category.'">'.TemplateController::capitalize(strtolower($value->name_category)).'</div><img class="img--bg" src="'.$backoffice.'views/img/projects/'.$value->id_category.'/logo/'.$value->logo_project.'" alt="'.$value->name_project.'"/>
+                                            </div>
+                                            <div class="causes-item__lower">
+                                                <div class="causes-item__details-holder">
+                                                    <ul class="aside-socials">';
 
-                                                            echo '<li class="aside-socials__item"><a class="aside-socials__link" href="'.$value_["url"].'" target="_blank"><i class="fa '.$value_["red"].'" aria-hidden="true"></i></a></li>';
+                                                        foreach ($dataProjectsSocial as $key => $value_) {
+
+                                                            if($value_['status'] != 0){
+
+                                                                echo '<li class="aside-socials__item"><a class="aside-socials__link" href="'.$value_["url"].'" target="_blank"><i class="fa '.$value_["red"].'" aria-hidden="true"></i></a></li>';
+
+                                                            }
 
                                                         }
+                                                    echo '</ul>
+                                                </div>
+                                                <div class="causes-item__details-holder">
+                                                    <div class="causes-item__details-item"><span>Productos: </span><span>'.$value->product_project.'</span></div>
+                                                    <div class="causes-item__details-item text-right"><span>Visitas: </span><span> '.$value->views_project.'</span></div>
+                                                </div>
+                                            </div>
+                                        </div><a class="button causes-item__button button--primary" href="'.$path.$value->route_project.'">Ver más</a>
+                                    </div>
+                                </div>';
 
-                                                    }
-                                                echo '</ul>
-                                            </div>
-                                            <div class="causes-item__details-holder">
-                                                <div class="causes-item__details-item"><span>Productos: </span><span>'.$value->product_project.'</span></div>
-                                                <div class="causes-item__details-item text-right"><span>Visitas: </span><span> '.$value->views_project.'</span></div>
-                                            </div>
-                                        </div>
-                                    </div><a class="button causes-item__button button--primary" href="'.$path.$value->route_project.'">Ver más</a>
-                                </div>
-                            </div>';
+                            }
 
                         }
 
@@ -323,12 +327,12 @@
                             if($routesArray[1] == "projects"){
 
                                 $select = "*";
-                               $url = CurlController::api()."relations?rel=projects,categories&type=project,category&linkTo=status_project&equalTo=1&linkTo_=bdelete_project&equalTo_=0&select=".$select;
+                               $url = CurlController::api()."relations?rel=projects,categories&type=project,category&linkTo=status_project&equalTo=1&linkTo_=process_project&equalTo_=2&select=".$select;
 
                             }else{
 
                                 $select = "*";
-                                $url = CurlController::api()."relations?rel=projects,categories&type=project,category&linkTo=route_category&equalTo=".$routesArray[1]."&linkTo_=status_project&equalTo_=1&orderBy=id_project&orderMode=DESC&select=".$select;
+                                $url = CurlController::api()."relations?rel=projects,categories&type=project,category&linkTo=route_category&equalTo=".$routesArray[1]."&linkTo_=process_project&equalTo_=2&orderBy=id_project&orderMode=DESC&select=".$select;
 
                             }
 
