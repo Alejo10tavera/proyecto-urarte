@@ -149,33 +149,78 @@ $pageContact = CurlController::request($url, $method, $fields, $header)->results
     </section>
     <!-- section end-->
 
+    <div class="container-fluid preloadTrue" style="position: absolute; left: 50%; margin: -25px 0 0 -25px;">
+    
+       <div class="spinner-border text-muted my-5"></div>
+
+    </div>
+
     <!-- contacts start-->
-    <section class="section contacts no-padding-top">
+    <section class="section contacts no-padding-top preloadFalse">
         <div class="contacts-wrapper">
             <div class="container">
                 <div class="row justify-content-end">
                     <div class="col-xl-6">
-                        <form class="form message-form" action="javascript:void(0);">
+                        <form class="form account-form sign-up-form needs-validation" novalidate method="post">
                             <h6 class="form__title">Enviar un mensaje</h6><span class="form__text">* Elementos requeridos</span>
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <input class="form__field" type="text" name="first-name" placeholder="Nombres *" required="required"/>
+
+                                <div class="form-group col-lg-6">
+
+                                    <input class="form__field form-control" type="text" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ ]{1,}" onchange="validateJS(event, 'text')" name="contFirstName" placeholder="Nombres" required/>
+
+                                    <div class="valid-feedback">Correcto.</div>
+                                    <div class="invalid-feedback">Complete este campo correctamente.</div>
+                                    
                                 </div>
-                                <div class="col-lg-6">
-                                    <input class="form__field" type="text" name="last-name" placeholder="Apellidos *" required="required"/>
+
+                                <div class="form-group col-lg-6">
+
+                                    <input class="form__field form-control" type="text" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ ]{1,}" onchange="validateJS(event, 'text')" name="contLastName" placeholder="Apellidos" required/>
+
+                                    <div class="valid-feedback">Correcto.</div>
+                                    <div class="invalid-feedback">Complete este campo correctamente.</div>
+                                    
                                 </div>
-                                <div class="col-lg-6">
-                                    <input class="form__field" type="email" name="email" placeholder="Email *" required="required"/>
+
+                                <div class="form-group col-lg-6">
+
+                                    <input class="form__field form-control" type="email" pattern="[^0-9][.a-zA-Z0-9_]+([.][.a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}" onchange="validateJS(event,'email')" name="contEmail" placeholder="Correo" required/>
+
+                                    <div class="valid-feedback">Correcto.</div>
+                                    <div class="invalid-feedback">Complete este campo correctamente.</div>
+                                    
                                 </div>
-                                <div class="col-lg-6">
-                                    <input class="form__field" type="tel" name="phone-number" placeholder="Teléfono *" required="required"/>
+
+                                <div class="form-group col-lg-6">
+
+                                    <input class="form__field form-control" type="text" pattern="[-\\(\\)\\0-9 ]{1,}"onchange="validateJS(event, 'phone')" name="contPhone" placeholder="Télefono" required>
+
+                                    <div class="valid-feedback">Correcto.</div>
+                                    <div class="invalid-feedback">Complete este campo correctamente.</div>
+                                    
                                 </div>
+
                                 <div class="col-12">
-                                    <textarea class="form__message form__field" name="message" placeholder="Mensaje *" required="required"></textarea>
+
+                                    <textarea class="form__message form__field form-control" rows="7" pattern='[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\"\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,}' onchange="validateJS(event, 'paragraphs')"  name="contMessage" placeholder="Ingrese aquí su mensaje" required></textarea>
+
+                                    <div class="valid-feedback">Correcto.</div>
+                                    <div class="invalid-feedback">Complete este campo correctamente.</div>
+
                                 </div>
+
                                 <div class="col-12">
                                     <button class="form__submit" type="submit">Enviar</button>
                                 </div>
+
+                                <?php 
+
+                                    $newMessage = new GeneralController();
+                                    $newMessage -> ctrNewMessage();
+
+                                ?>
+
                             </div>
                         </form>
                     </div>

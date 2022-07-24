@@ -109,7 +109,7 @@ $infoDataProject = CurlController::request($url, $method, $fields, $header)->res
                             <li><a href="#horizontal-tabs__item-4"><span>Integrantes</span></a></li>
                             <li><a href="#horizontal-tabs__item-5"><span>Galeria</span></a></li>
                             <li><a href="#horizontal-tabs__item-6"><span>Donar</span></a></li>
-                            <li><a href="#horizontal-tabs__item-7"><span>Contactar</span></a></li>
+                            <li><a href="#horizontal-tabs__item-7"><span>Contacto</span></a></li>
                         </ul>
                         <div class="horizontal-tabs__content">                           
 

@@ -35,7 +35,7 @@ class UsersController{
 					"method_user" => "direct",
 					"status_user" => 1,
 					"bdelete_user" => 0
-
+					
 				);
 
 				$header = array(

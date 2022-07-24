@@ -227,7 +227,7 @@ function validateJS(event, type){
 
         if(image["type"] !== "image/jpeg" && image["type"] !== "image/png"){
 
-            fncSweetAlert("error", "The image must be in JPG or PNG format", null)
+            fncSweetAlert("error", "La imagen debe estar en formato JPG o PNG", null)
 
             return;
             
@@ -239,7 +239,7 @@ function validateJS(event, type){
 
         else if(image["size"] > 2000000){
 
-            fncSweetAlert("error", "Image must not weigh more than 2MB", null)
+            fncSweetAlert("error", "La imagen no debe pesar más de 2 MB", null)
 
             return;
 
@@ -261,6 +261,50 @@ function validateJS(event, type){
                 $(".changePicture").attr("src", path);    
 
             })
+
+        }
+
+    }
+
+    /*=============================================
+    Validamos teléfono
+    =============================================*/
+
+    if(type == "phone"){
+
+        var pattern = /^[-\\(\\)\\0-9 ]{1,}$/;
+
+        if(!pattern.test(event.target.value)){
+
+            $(event.target).parent().addClass("was-validated");
+
+            $(event.target).parent().children(".invalid-feedback").html("El teléfono esta mal escrito");
+
+            event.target.value = "";
+
+            return;
+
+        }
+
+    }
+
+    /*=============================================
+    Validamos párrafos
+    =============================================*/
+
+    if(type == "paragraphs"){
+
+        var pattern = /^[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\"\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,}$/;
+
+        if(!pattern.test(event.target.value)){
+
+            $(event.target).parent().addClass("was-validated");
+
+            $(event.target).parent().children(".invalid-feedback").html("The input is misspelled");
+
+            event.target.value = "";
+
+            return;
 
         }
 

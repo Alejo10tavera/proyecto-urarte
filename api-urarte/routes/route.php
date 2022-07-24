@@ -327,9 +327,10 @@ if(count($routesArray) == 0){
 
 						if(isset($_GET["except"])){
 
-							$num = 0;
-
+							$num = 0;							
+														
 							foreach ($columns as $key => $value) {
+								
 
 								$num++;
 								
@@ -337,8 +338,9 @@ if(count($routesArray) == 0){
 								Buscamos coincidencia con la excepción
 								=============================================*/
 
-								if($value == $_GET["except"]){
-
+								if($num == count($columns)){
+									
+									
 									/*=============================================
 									Solicitamos respuesta del controlador para crear datos en cualquier tabla
 									=============================================*/	
@@ -352,23 +354,6 @@ if(count($routesArray) == 0){
 
 							}
 
-							/*=============================================
-							Cuando no encuentra coincidencia
-							=============================================*/
-
-							if($num == count($columns)){
-
-								$json = array(
-								 	'status' => 400,
-								 	'results' => "The exception does not match the database"
-								);
-
-								echo json_encode($json, http_response_code($json["status"]));
-
-								return;
-
-							}		
-
 						}else{
 
 							/*=============================================
@@ -377,7 +362,7 @@ if(count($routesArray) == 0){
 
 							$json = array(
 							 	'status' => 400,
-							 	'results' => "There is no exception"
+							 	'results' => "No hay excepción"
 							);
 
 							echo json_encode($json, http_response_code($json["status"]));
@@ -415,7 +400,7 @@ if(count($routesArray) == 0){
 
 								$json = array(
 								 	'status' => 400,
-								 	'results' => "Error: The token has expired"
+								 	'results' => "Error: el token ha caducado"
 								);
 
 								echo json_encode($json, http_response_code($json["status"]));
@@ -428,7 +413,7 @@ if(count($routesArray) == 0){
 
 							$json = array(
 							 	'status' => 400,
-							 	'results' => "Error: The user is not authorized"
+							 	'results' => "Error: el usuario no está autorizado"
 							);
 
 							echo json_encode($json, http_response_code($json["status"]));
@@ -443,7 +428,7 @@ if(count($routesArray) == 0){
 
 					$json = array(
 					 	'status' => 400,
-					 	'results' => "Error: Authorization required"
+					 	'results' => "Error: se requiere autorización"
 					);
 
 					echo json_encode($json, http_response_code($json["status"]));
@@ -456,7 +441,7 @@ if(count($routesArray) == 0){
 
 				$json = array(
 				 	'status' => 400,
-				 	'results' => "Error: Fields in the form do not match the database"
+				 	'results' => "Error: Los campos del formulario no coinciden con la base de datos"
 				);
 
 				echo json_encode($json, http_response_code($json["status"]));
